@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[A blog about computer science, mathematics, and life.]]></description><link>https://zhexulong.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Wed, 24 Jul 2024 11:24:20 GMT</lastBuildDate><item><title><![CDATA[从UNet模型剪枝到rk3588板端推理部署]]></title><description><![CDATA[模型剪枝 剪枝所需工具型代码 下面是相应python代码 剪枝过程 下面是相应python代码,只表示所需过程,仅供读者参考 微调(fine-tune)部分 下面是相应python代码,solver…]]></description><link>https://zhexulong.github.io/rk3588-prone/</link><guid isPermaLink="false">https://zhexulong.github.io/rk3588-prone/</guid><pubDate>Mon, 10 Jun 2024 23:29:00 GMT</pubDate><content:encoded>&lt;h2&gt;模型剪枝&lt;/h2&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[A blog about computer science, mathematics, and life.]]></description><link>https://zhexulong.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Wed, 24 Jul 2024 12:03:38 GMT</lastBuildDate><item><title><![CDATA[从UNet模型剪枝到rk3588板端推理部署]]></title><description><![CDATA[模型剪枝 剪枝所需工具型代码 下面是相应python代码 剪枝过程 下面是相应python代码,只表示所需过程,仅供读者参考 微调(fine-tune)部分 下面是相应python代码,solver…]]></description><link>https://zhexulong.github.io/rk3588-prone/</link><guid isPermaLink="false">https://zhexulong.github.io/rk3588-prone/</guid><pubDate>Mon, 10 Jun 2024 23:29:00 GMT</pubDate><content:encoded>&lt;h2&gt;模型剪枝&lt;/h2&gt;
 &lt;h3&gt;剪枝所需工具型代码&lt;/h3&gt;
 &lt;p&gt;下面是相应python代码&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;python&quot;&gt;&lt;pre class=&quot;language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; torch
@@ -620,7 +620,200 @@ torch&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;onnx&lt;span 
 &lt;/table&gt;
 &lt;p&gt;可以看到,剪枝后各层size的数字呈现杂乱无序的特点,总参数量虽然降低了,但是结构相比之前不适应于硬件架构,导致运行速度降低幅度相对较小&lt;/p&gt;
 &lt;h3&gt;参考&lt;/h3&gt;
-&lt;p&gt;南京大学结构化剪枝综述: &lt;a href=&quot;https://cs.nju.edu.cn/wujx/paper/Pruning_Survey_MLA21.pdf&quot;&gt;https://cs.nju.edu.cn/wujx/paper/Pruning_Survey_MLA21.pdf&lt;/a&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[从医学图像分割pipeline搭建到rk3588板端推理部署]]></title><description><![CDATA[pipeline搭建 基于UNet的医学图像分割
+&lt;p&gt;南京大学结构化剪枝综述: &lt;a href=&quot;https://cs.nju.edu.cn/wujx/paper/Pruning_Survey_MLA21.pdf&quot;&gt;https://cs.nju.edu.cn/wujx/paper/Pruning_Survey_MLA21.pdf&lt;/a&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[正点原子I.MX6ULL mini适配xueliu dw1000驱动]]></title><description><![CDATA[相较于网上的其他驱动而言,这个驱动结构较为简单,并且需要的内核版本也较低,可以在略微修改之后兼容linux4.1版本,因而选择该驱动 首先,为这个驱动配套一版设备树 我们需要根据 编写一版驱动
+根据教程
+
+
+我们可以对应修改即可 解决缺少IEEE80215…]]></description><link>https://zhexulong.github.io/MX6ULL-dw1000/</link><guid isPermaLink="false">https://zhexulong.github.io/MX6ULL-dw1000/</guid><pubDate>Sat, 11 May 2024 22:56:00 GMT</pubDate><content:encoded>&lt;p&gt;相较于网上的其他驱动而言,这个驱动结构较为简单,并且需要的内核版本也较低,可以在略微修改之后兼容linux4.1版本,因而选择该驱动&lt;/p&gt;
+&lt;h2&gt;首先,为这个驱动配套一版设备树&lt;/h2&gt;
+&lt;p&gt;我们需要根据&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;	rstn = devm_gpiod_get(&amp;amp;spi-&gt;dev, &quot;rstn&quot;, GPIOD_OUT_LOW);&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;static const struct of_device_id dw1000_of_match[] = {
+	{ .compatible = &quot;decaWave,dw1000&quot;, },
+	{ },
+};
+MODULE_DEVICE_TABLE(of, dw1000_of_match);
+
+static const struct spi_device_id dw1000_device_id[] = {
+	{ .name = &quot;dw1000&quot;, },
+	{ },
+};
+MODULE_DEVICE_TABLE(spi, dw1000_device_id);
+
+static struct spi_driver dw1000_driver = {
+	.id_table = dw1000_device_id,
+	.driver = {
+		.of_match_table = dw1000_of_match,
+		.name	= &quot;dw1000&quot;,
+	},
+	.probe      = dw1000_probe,
+	.remove     = dw1000_remove,
+};
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;编写一版驱动
+根据教程
+&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/c7341dc9ce2d169c7552171d815fe934/00172/img.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 45.56962025316456%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAJCAIAAAC9o5sfAAAACXBIWXMAAAsTAAALEwEAmpwYAAABQ0lEQVR42l1R2ZKDIBDM/3/eitSqUe5DSYwcUfOiO0qlsrsNTDVKF9P0Zd/3eZ6du2mtldbihD42sNOZW9sbrfu+d84ZY6dp2rYNhBdY4zgqrZwbUkrruoTkxzD66GFOcfLJxzku8/x8phBCTGlZlv3EIXZ9X9d10zRQSUfRN0INJoK0vL2ya65KnZ2cHRljPjff3SC4YIyVZYnxd1U1pCMwKaGUMEao4FJLplhLBaOc/hGPNwfejNFVXWGMyxKVGQc/0BJiWKs7fGVtRWrw+EvseimFlBKOowJ9FQVCKOuKkzMuDWtMh2va4BZDG/v29vy4O2ibUv62lR/+P8C1hKGUtfZz8+v1gsPDMOR/YIlzTikFLqQw2hzpQW9HkZwL+P55bYiKEGIhQWtjjCnGEMNjmiC5GIL3PhwRAQ3rup40ZvEPLnrrIHytYbsAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;img.png&quot;
+        title=&quot;&quot;
+        src=&quot;/static/c7341dc9ce2d169c7552171d815fe934/f058b/img.png&quot;
+        srcset=&quot;/static/c7341dc9ce2d169c7552171d815fe934/c26ae/img.png 158w,
+/static/c7341dc9ce2d169c7552171d815fe934/6bdcf/img.png 315w,
+/static/c7341dc9ce2d169c7552171d815fe934/f058b/img.png 630w,
+/static/c7341dc9ce2d169c7552171d815fe934/40601/img.png 945w,
+/static/c7341dc9ce2d169c7552171d815fe934/00172/img.png 1044w&quot;
+        sizes=&quot;(max-width: 630px) 100vw, 630px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;
+&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/6eed9598806b2dc467a187bf19fc0ede/0a867/img_1.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 59.49367088607595%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAMCAIAAADtbgqsAAAACXBIWXMAAAsTAAALEwEAmpwYAAABe0lEQVR42oWS2Y7jIBBF+/9/rh/SCftmNi8Zt4M9UmyIPIWllnqfo1JhGS63gHra972UEmN0zhljKCGQueCQ53nOpWxA3g7WFT5LWdf18XiA8AmG6/XqvVdKNU0TQujabugH7zxs18YIf5zzMKW1htx1nZRymm5VnHOOse37PgQ/juO8pDGNU5ogbvNtmqe0pCm9jjeYmv8eLMtyv9+ruJSslcYYS6msdUwxxBGVlCtBJRONgGCaUUWMNf4AKoJiD3HevLWCC4wwYwIhyihVgjMqIJTSSpngofoYfPgsztvaess4P51O6IKfn88YE8nh4ggXcDophIIzv+ed87ZGbznnGCMpJEjAXyoJtVTPA+9/EOe8BWe1MWBiGqu1MqaBFSHEr7JvnINrQEwq+Hy+EMLgVUxFG63hFn8VWx3bllL28nJBiHDOBBTOuVf1CZz7zfnujQADENTgtVUs2B28jR+ABcMwHB1WytB1fX+FDhlfa/rzP8A2pbTv+z/BU4rr+oajxgAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;img_1.png&quot;
+        title=&quot;&quot;
+        src=&quot;/static/6eed9598806b2dc467a187bf19fc0ede/f058b/img_1.png&quot;
+        srcset=&quot;/static/6eed9598806b2dc467a187bf19fc0ede/c26ae/img_1.png 158w,
+/static/6eed9598806b2dc467a187bf19fc0ede/6bdcf/img_1.png 315w,
+/static/6eed9598806b2dc467a187bf19fc0ede/f058b/img_1.png 630w,
+/static/6eed9598806b2dc467a187bf19fc0ede/40601/img_1.png 945w,
+/static/6eed9598806b2dc467a187bf19fc0ede/0a867/img_1.png 986w&quot;
+        sizes=&quot;(max-width: 630px) 100vw, 630px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;
+我们可以对应修改即可&lt;/p&gt;
+&lt;h2&gt;解决缺少IEEE802154模块问题&lt;/h2&gt;
+&lt;p&gt;移植完设备树,并将驱动编译成功发到开发板上,调试时发现报错&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;dw1000: Unknown symbol ieee802154_alloc_hw (err 0)
+dw1000: Unknown symbol ieee802154_xmit_complete (err 0)
+dw1000: Unknown symbol ieee802154_rx_irqsafe (err 0)
+dw1000: Unknown symbol ieee802154_unregister_hw (err 0)
+dw1000: Unknown symbol ieee802154_free_hw (err 0)
+dw1000: Unknown symbol ieee802154_register_hw (err 0)
+dw1000: Unknown symbol ieee802154_alloc_hw (err 0)
+dw1000: Unknown symbol ieee802154_xmit_complete (err 0)
+dw1000: Unknown symbol ieee802154_rx_irqsafe (err 0)
+dw1000: Unknown symbol ieee802154_unregister_hw (err 0)&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;为了加载该模块,需要在相应的defconfig(正点原子为imx_alientek_emmc_defconfig)中加入&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;CONFIG_IEEE802154=y
+CONFIG_MAC802154=y&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;然后重新&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;make imx_alientek_emmc_defconfig
+make all -j12&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;然后发现报错变为了&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;dw1000: no symbol version for ieee802154_free_hw
+dw1000: Unknown symbol ieee802154_free_hw (err -22)
+dw1000: no symbol version for ieee802154_register_hw
+dw1000: Unknown symbol ieee802154_register_hw (err -22)
+dw1000: no symbol version for ieee802154_alloc_hw
+dw1000: Unknown symbol ieee802154_alloc_hw (err -22)
+dw1000: no symbol version for ieee802154_xmit_complete
+dw1000: Unknown symbol ieee802154_xmit_complete (err -22)
+dw1000: no symbol version for ieee802154_rx_irqsafe
+dw1000: Unknown symbol ieee802154_rx_irqsafe (err -22)
+dw1000: no symbol version for ieee802154_unregister_hw
+dw1000: Unknown symbol ieee802154_unregister_hw (err -22)
+dw1000: no symbol version for ieee802154_free_hw
+dw1000: Unknown symbol ieee802154_free_hw (err -22)
+dw1000: no symbol version for ieee802154_register_hw
+dw1000: Unknown symbol ieee802154_register_hw (err -22)
+dw1000: no symbol version for ieee802154_alloc_hw
+dw1000: Unknown symbol ieee802154_alloc_hw (err -22)
+dw1000: no symbol version for ieee802154_xmit_complete
+dw1000: Unknown symbol ieee802154_xmit_complete (err -22)
+dw1000: no symbol version for ieee802154_rx_irqsafe
+dw1000: Unknown symbol ieee802154_rx_irqsafe (err -22)
+dw1000: no symbol version for ieee802154_unregister_hw
+dw1000: Unknown symbol ieee802154_unregister_hw (err -22)
+modprobe: can&apos;t load module dw1000.ko (dw1000.ko): Invalid argument&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;这就是因为虽然我们的内核更新了,但是驱动没能成功重新链接相应符号
+所以我们要重新编译驱动
+这是相应的Makefile&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;makefile&quot;&gt;&lt;pre class=&quot;language-makefile&quot;&gt;&lt;code class=&quot;language-makefile&quot;&gt;obj-m &lt;span class=&quot;token operator&quot;&gt;+=&lt;/span&gt; dw1000.o
+KERNELDIR &lt;span class=&quot;token operator&quot;&gt;:=&lt;/span&gt; /home/alientek/linux/IMX6ULL/linux/linux-imx-rel_imx_4.1.15_2.1.0_ga
+ENV&lt;span class=&quot;token operator&quot;&gt;:=&lt;/span&gt;ARCH&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;arm CROSS_COMPILE&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;arm-linux-gnueabihf-
+CURRENT_PATH &lt;span class=&quot;token operator&quot;&gt;:=&lt;/span&gt; &lt;span class=&quot;token variable&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;shell&lt;/span&gt; pwd&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;token target symbol&quot;&gt;build&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; kernel_modules
+
+&lt;span class=&quot;token target symbol&quot;&gt;kernel_modules&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+	&lt;span class=&quot;token variable&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;MAKE&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token variable&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;ENV&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; -C &lt;span class=&quot;token variable&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;KERNELDIR&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; M&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token variable&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;CURRENT_PATH&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; modules
+
+&lt;span class=&quot;token target symbol&quot;&gt;clean&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+	&lt;span class=&quot;token variable&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;MAKE&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token variable&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;ENV&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; -C &lt;span class=&quot;token variable&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;KERNELDIR&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; M&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token variable&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;CURRENT_PATH&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; clean
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;make之后传到板子的根文件系统中&lt;/p&gt;
+&lt;h2&gt;发现并解决设备树冲突/问题&lt;/h2&gt;
+&lt;p&gt;驱动能够运行了,但是发现读不到东西&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;dw1000 spi2.0: Detected DW1000 chip id: 0x00000000&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;这是因为当前的设备树有冲突,可以运行命令&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;dmesg | grep spi&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;发现报错&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;imx6ul-pinctrl 20e0000.iomuxc: pin MX6UL_PAD_UART2_TX_DATA already requested by 21e8000.serial; cannot claim for 2010000.ecspi
+imx6ul-pinctrl 20e0000.iomuxc: pin-37 (2010000.ecspi) status -22&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;查看设备树可以发现,是因为uart2和我们使用了相同的引脚,将uart2设置为disable即可
+结果发现,还是没成功,chip id应该是0xDECA0130,结果是&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;dw1000 spi2.0: Detected DW1000 chip id: 0x80808000&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;为了能够及时发现自己的设备树编写和驱动probe的过程中是否有问题,我们可以加上下面两句:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;cpp&quot;&gt;&lt;pre class=&quot;language-cpp&quot;&gt;&lt;code class=&quot;language-cpp&quot;&gt;	&lt;span class=&quot;token function&quot;&gt;printk&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;dw1000: rstn gpio is %d\n&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;gpiod_to_irq&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;rstn&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+	&lt;span class=&quot;token function&quot;&gt;printk&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;dw1000: spi pins are %d\n&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; spi&lt;span class=&quot;token operator&quot;&gt;-&gt;&lt;/span&gt;cs_gpio&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;同时,可以把dev_dbg重新定义为&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;cpp&quot;&gt;&lt;pre class=&quot;language-cpp&quot;&gt;&lt;code class=&quot;language-cpp&quot;&gt;&lt;span class=&quot;token macro property&quot;&gt;&lt;span class=&quot;token directive-hash&quot;&gt;#&lt;/span&gt;&lt;span class=&quot;token directive keyword&quot;&gt;define&lt;/span&gt; &lt;span class=&quot;token macro-name function&quot;&gt;dev_dbg&lt;/span&gt;&lt;span class=&quot;token expression&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;dev&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; fmt&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; args&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;\&lt;/span&gt;
+	&lt;span class=&quot;token expression&quot;&gt;&lt;span class=&quot;token function&quot;&gt;printk&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;KERN_DEBUG &lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;%s: &quot;&lt;/span&gt; &lt;span class=&quot;token expression&quot;&gt;fmt&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;dev_name&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;dev&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;##&lt;/span&gt;&lt;span class=&quot;token expression&quot;&gt;args&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;然后发现&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;dw1000: rstn gpio is 36
+dw1000: spi pins are -2&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;这就说明我们spi的cs_gpio有问题,回看设备树
+发现&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;	cs-gpio = &amp;lt;&amp;amp;gpio1 20 GPIO_ACTIVE_LOW&gt;;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;改为&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;	cs-gpios = &amp;lt;&amp;amp;gpio1 20 GPIO_ACTIVE_LOW&gt;;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;终于,发现能够成功打印出&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;dw1000 spi2.0: Detected DW1000 chip id: 0xdeca0130
+dw1000 spi2.0: OTP Rev: 0x60
+dw1000 spi2.0: OTP LDO Turn: 0xfe
+dw1000 spi2.0: OTP XTAL Trim: 0xfe
+dw1000 spi2.0: Microcode is loaded&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;但是由于当前版本的linux中没有ieee802154_is_valid_extended_unicast_addr函数,所以暂时&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;OTP EUI not found&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;参考:
+&lt;a href=&quot;https://github.com/xueliu/dw1000-linux.git&quot;&gt;xueliu/dw1000-linux驱动源码&lt;/a&gt;
+&lt;a href=&quot;https://blog.csdn.net/hshl1214/article/details/8769112&quot;&gt;关于内核模块挂载出现“no symbol version for”问题的研究&lt;/a&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[从医学图像分割pipeline搭建到rk3588板端推理部署]]></title><description><![CDATA[pipeline搭建 基于UNet的医学图像分割
 下面是分类结果,这是一个多标签分类的任务,所提供的为原始image和ground truth,prediction为网络预测的
   观察到所提供的ground truth…]]></description><link>https://zhexulong.github.io/rk3588/</link><guid isPermaLink="false">https://zhexulong.github.io/rk3588/</guid><pubDate>Mon, 22 Apr 2024 19:48:00 GMT</pubDate><content:encoded>&lt;h2&gt;pipeline搭建&lt;/h2&gt;
 &lt;p&gt;基于UNet的医学图像分割
