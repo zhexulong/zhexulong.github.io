@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[A blog about computer science, mathematics, and life.]]></description><link>https://zhexulong.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Wed, 24 Jul 2024 12:03:38 GMT</lastBuildDate><item><title><![CDATA[从UNet模型剪枝到rk3588板端推理部署]]></title><description><![CDATA[模型剪枝 剪枝所需工具型代码 下面是相应python代码 剪枝过程 下面是相应python代码,只表示所需过程,仅供读者参考 微调(fine-tune)部分 下面是相应python代码,solver…]]></description><link>https://zhexulong.github.io/rk3588-prone/</link><guid isPermaLink="false">https://zhexulong.github.io/rk3588-prone/</guid><pubDate>Mon, 10 Jun 2024 23:29:00 GMT</pubDate><content:encoded>&lt;h2&gt;模型剪枝&lt;/h2&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[A blog about computer science, mathematics, and life.]]></description><link>https://zhexulong.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Wed, 24 Jul 2024 12:09:40 GMT</lastBuildDate><item><title><![CDATA[从UNet模型剪枝到rk3588板端推理部署]]></title><description><![CDATA[模型剪枝 剪枝所需工具型代码 下面是相应python代码 剪枝过程 下面是相应python代码,只表示所需过程,仅供读者参考 微调(fine-tune)部分 下面是相应python代码,solver…]]></description><link>https://zhexulong.github.io/rk3588-prone/</link><guid isPermaLink="false">https://zhexulong.github.io/rk3588-prone/</guid><pubDate>Mon, 10 Jun 2024 23:29:00 GMT</pubDate><content:encoded>&lt;h2&gt;模型剪枝&lt;/h2&gt;
 &lt;h3&gt;剪枝所需工具型代码&lt;/h3&gt;
 &lt;p&gt;下面是相应python代码&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;python&quot;&gt;&lt;pre class=&quot;language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; torch
@@ -1123,4 +1123,35 @@ torch&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;onnx&lt;span 
 &lt;ul&gt;
 &lt;li&gt;模型部署——使用rknn-toolkit将Pytorch模型转为RKNN模型（详细图文教程）: &lt;a href=&quot;https://blog.csdn.net/qq_40280673/article/details/136229500&quot;&gt;https://blog.csdn.net/qq_40280673/article/details/136229500&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;RKNN Toolkit2介绍: &lt;a href=&quot;https://doc.embedfire.com/linux/rk356x/Ai/zh/latest/lubancat_ai/env/toolkit2.html&quot;&gt;https://doc.embedfire.com/linux/rk356x/Ai/zh/latest/lubancat_ai/env/toolkit2.html&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content:encoded></item></channel></rss>
+&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[nrf connect sdk(v2.3.0)在含定时器的BLE开发中出现的notify卡死问题]]></title><description><![CDATA[假如你所开发的BLE项目出现了用nrf connect这个app来连接nordic蓝牙,read方法可以读取,但是notify出现了: 在使用工作队列的情况下: 1.第一次点击notify enable按钮只能读取1-2个数据 2.第二次点击notify enable…]]></description><link>https://zhexulong.github.io/nrf-ble-notify/</link><guid isPermaLink="false">https://zhexulong.github.io/nrf-ble-notify/</guid><pubDate>Sat, 29 Apr 2023 20:25:00 GMT</pubDate><content:encoded>&lt;p&gt;假如你所开发的BLE项目出现了用nrf connect这个app来连接nordic蓝牙,read方法可以读取,但是notify出现了:&lt;/p&gt;
+&lt;p&gt;在使用工作队列的情况下:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;1.第一次点击notify enable按钮只能读取1-2个数据&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;2.第二次点击notify enable按钮可以读到几秒到几十秒数据(随蓝牙信号强度而变化),然后卡死&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;在只用定时器的情况下:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;KERNEL报错,自动reset&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;那么,很有可能,你是遇到了本问题.&lt;/p&gt;
+&lt;p&gt;问题出现的原因是nrf connect sdk自身的bt_gatt_notify_cb()函数有bug,&lt;/p&gt;
+&lt;p&gt;该函数底层调用了bt_conn_tx()函数,使得它在conn层发送的时候,调用了下面的函数:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;cpp&quot;&gt;&lt;pre class=&quot;language-cpp&quot;&gt;&lt;code class=&quot;language-cpp&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;k_fifo_get&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&amp;amp;&lt;/span&gt;free_tx&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; K_FOREVER&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;这个函数会在free_tx这个FIFO里以阻塞方式(K_FOREVER)读取数据.你的定时器可能会在其读数据前打断,并塞入新数据.&lt;/p&gt;
+&lt;p&gt;请注意,问题根源并不在于有些人所说的线程死锁,而是FIFO本身存储空间太小,要发送的包只能存储三个(BT_CONN_TX_MAX默认设置为3),导致您:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;1.第一次要发的包过多,FIFO只能存储前三个,k_fifo_get()函数想要读取FIFO超过三次来发送,而导致阻塞.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;2.后面有几次发包被定时器打断,导致送给FIFO存储的包大于三个,但是FIFO只能存三个,k_fifo_get()函数想要读取FIFO超过三次来发送,导致阻塞.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;在只有定时器的情况下(即中断处理时运行),则会导致崩溃.&lt;/p&gt;
+&lt;p&gt;解决方法:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;方法1:设置CONFIG_BT_CONN_TX_MAX=255[力大砖飞]&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;方法2:多线程,在另一个线程中进行bt_gatt_notify_cb()[不建议,线程lock与resume需要时间]&lt;/p&gt;
+&lt;/blockquote&gt;</content:encoded></item></channel></rss>
