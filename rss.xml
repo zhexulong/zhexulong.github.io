@@ -1,4 +1,107 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[A blog about computer science, mathematics, and life.]]></description><link>https://zhexulong.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Fri, 06 Sep 2024 13:10:07 GMT</lastBuildDate><item><title><![CDATA[zynq手写数字识别]]></title><description><![CDATA[总体设计  该图像由下述命令生成,精度较高,可点开大图详细观看 PL端: 读取ov5640摄像头采集的数据 使用Vitis HLS生成的IP核,将ov5640摄像头采集的rgb数据转为灰度数据,选定大小为112x112框,将框内灰度数据二值化,然后将灰度数据重新转为rgb…]]></description><link>https://zhexulong.github.io/zynq-mnist/</link><guid isPermaLink="false">https://zhexulong.github.io/zynq-mnist/</guid><pubDate>Fri, 06 Sep 2024 20:43:00 GMT</pubDate><content:encoded>&lt;h2&gt;总体设计&lt;/h2&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[A blog about computer science, mathematics, and life.]]></description><link>https://zhexulong.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Sat, 07 Sep 2024 06:45:01 GMT</lastBuildDate><item><title><![CDATA[zynq经历与预测]]></title><description><![CDATA[经验 Vivado使用经验 doesn't exist问题/自定义ip核not found问题(HLS ip核尤其可能发生)/任何block design的奇怪问题 先尝试重新打开vivado,如果没解决,进行下一步 在block design中删除对应ip…]]></description><link>https://zhexulong.github.io/zynq-prediction/</link><guid isPermaLink="false">https://zhexulong.github.io/zynq-prediction/</guid><pubDate>Sat, 07 Sep 2024 01:43:00 GMT</pubDate><content:encoded>&lt;h2&gt;经验&lt;/h2&gt;
+&lt;h3&gt;Vivado使用经验&lt;/h3&gt;
+&lt;h4&gt;doesn&apos;t exist问题/自定义ip核not found问题(HLS ip核尤其可能发生)/任何block design的奇怪问题&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;先尝试重新打开vivado,如果没解决,进行下一步&lt;/li&gt;
+&lt;li&gt;在block design中删除对应ip,保存,然后重新添加(ctrl+z或者重新加入重新连)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4&gt;vivado版本不同ip核升级问题&lt;/h4&gt;
+&lt;p&gt;a. 不升级ip核,以只读方式查看&lt;/p&gt;
+&lt;p&gt;b. 安装对应版本vivado&lt;/p&gt;
+&lt;h3&gt;Vitis HLS使用经验&lt;/h3&gt;
+&lt;h4&gt;提升代码编写效率&lt;/h4&gt;
+&lt;p&gt;不管是Vitis HLS还是Xilinx Vitis,它们的代码提示功能都不是很好,所以可以使用vscode进行代码编写,将相应头文件编辑入
+vscode插件的include path中, 可以获得更好的代码提示&lt;/p&gt;
+&lt;p&gt;并且,copilot插件可以帮助我们生成代码及获得建议&lt;/p&gt;
+&lt;h3&gt;Vitis使用经验&lt;/h3&gt;
+&lt;h4&gt;update hardware specification后program FPGA时依旧是旧硬件问题&lt;/h4&gt;
+&lt;p&gt;vitis的run configuration取消勾选reset entire system和program FPGA选项,
+通过vivado端program FPGA,然后再在Vitis端进行PS代码的烧录&lt;/p&gt;
+&lt;p&gt;但是,如果PL端的ip核更新,一定要在vivado端重新生成bitstream,然后在vitis端重新update hardware specification&lt;/p&gt;
+&lt;h2&gt;预测&lt;/h2&gt;
+&lt;h3&gt;目前方式(verilog/HLS)的PL端神经网络加速不会成为主流&lt;/h3&gt;
+&lt;p&gt;目前的PL端神经网络加速的问题,一言以蔽之,就是生态不好,设计和验证成本太高,目前的PL端加速在我看来没有太大的搞头,
+在未来这种设计方式必然被一种更具通用性的设计方式取代,如现在rknn-toolkit的方式,神经网络进行转化或者读取之后直接地进行部署
+,并提供sdk,使得对神经网络新发或者小众的层可以由用户写下相应算子供toolkit转换&lt;/p&gt;
+&lt;p&gt;同时,Versal的推出,意味着主流的趋势是PL端专门一个特化的AI处理器,然后对其进行软件开发(目前为C语言),
+这样的设计方式更具通用性,容易维护、开发&lt;/p&gt;
+&lt;p&gt;下图为Versal的架构图&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/9b4b4f15151a05ccb54100a4be4a340c/889a4/versal-arch.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 105.69620253164558%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAVCAIAAADJt1n/AAAACXBIWXMAAAsTAAALEwEAmpwYAAAEVklEQVR42m1US4/aVhT2P+umv6Cq1E03zaKbdNuusmmVSm0VVe0kTZpJFCWd0Tx4zSQME4bBYMAGzPvlN/ht/MA2NthAgBl66bpXumd1v3O+c+73Heh+t9uCu9tRFIVhWLVaDcNwtVoFQTCdTufzeRB6s7kLntgkxuQidjMpFs95+Gg1EaGlqzt9ZKFzsqIUCwVVVUEimqLeX15mMhlFUbgx1hvC47E+oasangyI7DAfQc8OXIWFQpUdpw99CgsWS1kZ86LSaHZkzVDHxt3dHWDBKCVaxtbrT7o4pDu4NxmvVwt/Ot1ut9DSEp1KxKErU39GsnwexZ8fvml0KYIZAaRlWYSIMFrVUvhpI2kiJz5bFwQeTUUcTYA8lVPyRxMCFSWFGcnNPpMrVhLJdK3Vs0xTkqQBn6OVskD3Z62rSfHEIbARQyInB2K3AgX6aNVLBnzDnwWeP3M9H/TZ6XR4QQDNg7FxGtZiYJElNjS847IuXeVoAk+81OnmnvaWuF6Kbct2sghSrDVwkknB+ZNoLFtEPc9jNYySsakhu80rB4+ZBMZzdCn6t0o1IZMnuPRrlyrTQ/7hm+iDOPJtAvn6deyL56ePk4gqCn0hNzLqgWOQ6XdS7kjrFlVxVLt8pTMtSGG6zdhTAO72Bw+T2JcR5LNHTz5//OyrD/j3H4poHsaJa1LCQtekM0fj0qnL1hxzzObO7FEPCg3erkS0dp4XpSeZ8ndvog9fHD34/eU3L45/il0zxKDUuCx3P67ndunsaeXsD7mVJ3sdoRDdg5cTcUuCnlu26yUzcAqt3tbb6WozDhfzWHk6dYd6eajXAtcYl+MGdq73iwxJoPFXwqAGeQo7wc5mXE2Q5HiDOK5Tv0WuDq7ga8lFCcYyDFopgX8GPa+pLCizENsESfXbtd3ubk8bgJV2TpTkWKXz1zXy6+nFwfvM6zx+izeF4ZCUCtwYB+AFkdlxcCC0ao1WLB6/v7+Hlqaw7ScXQtOyXRir4AOyzQ6bNJctV0mWm/k+q2JAntvNJvCmTbyia+pmvfF9H6gACifKgsq7XLNLc8+Tt6UusVmtvKlXRtF+twfsRe+1jc7ms6FA3cBX1XrJsvfm2YPnE7V7ey4NcGA8VpSHvIwjg8jRVSqBdKrscDii5CItoQQ5gLELrJm6TP9TqKaAK/bgzWoROuPQs4ESF2HgOt75u9QvP/756Iefo8cpx3ZppUCIBYal+xwKo3HZ6hmGkUhcAPFBoT+laXqx+gSWQSwWJQm6eNO6PM2ev01hcMfzfFHvjpS2YerCmEAq6T5XlzX55vYGeAZSdb7eqM5mc13XgdfsidvC2LeHZ4nTNNWWQGWS7XA8uQjD7Mfji9Nn+au3g1pc5Rv39zuIkKxcqaKPNd+fmaY5GBCWZTqOw/MC4ALW0AYMersPtib7lrYN3LU/WQf/TTuYB6ZhaBoA+7ZtcxwHIlgDwJgg13K53P3fCYLQtu1/Ac1RHIBa3B+hAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;versal-arch.png&quot;
+        title=&quot;&quot;
+        src=&quot;/static/9b4b4f15151a05ccb54100a4be4a340c/f058b/versal-arch.png&quot;
+        srcset=&quot;/static/9b4b4f15151a05ccb54100a4be4a340c/c26ae/versal-arch.png 158w,
+/static/9b4b4f15151a05ccb54100a4be4a340c/6bdcf/versal-arch.png 315w,
+/static/9b4b4f15151a05ccb54100a4be4a340c/f058b/versal-arch.png 630w,
+/static/9b4b4f15151a05ccb54100a4be4a340c/889a4/versal-arch.png 658w&quot;
+        sizes=&quot;(max-width: 630px) 100vw, 630px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;下图为vitis中开发AI引擎的选项
+&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/47c6e966676b931f98f8c2102b1c672f/42d54/vitis-ai.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 72.15189873417721%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAOCAIAAACgpqunAAAACXBIWXMAAAsTAAALEwEAmpwYAAACMElEQVR42mWSbVPaQBSF8+v9IZ1+0GFER6ZFoxHRVtBiVUQREpJ9f08CQdoPFdIb7VhsT57Z3GxydnNP4nU63Zvr24qb/uBxjKUiUhMu4gmKJiiOsRBKyr/ApTWmez38sHPoZVlWFMV0Bsd0jtAiip7C8ImxxeJpPi9+/liUq+XqjeWfYjpfYKE9jLHgXGgj7h/QZj0864bBKd7cFjoVLhc25yb7H+GmmCsviqLxOIwQIqMx2vscBe2Jf0ybvtRWGCeNFVDA0tpCzZVVxikLpIRLTzDqNLOSpkZkik4FYdAuSgjGMFJKAEYpxYQzFsVEa22tAYTgXvcu3rlku5es1qHbF6LZt4gpQjCqzEgqpddk18Q593oPuDUq2uOZ/wAUwXBGuKakcsJ+SikYGWPwKGQNob4hhPBgjXJNkKd2LsEY4FJqY5TRABTGOftGmnKtPZgFz3L1wrL8VZbmboB2G8gPqB8Q/zhp+mGjOfm0jw+OdPuLbn/Vp+c6aPPD4P3Oq9WqLOXJWWOzXQtGW/vD2mHYOIkardHe8Wjr4LF2FNZbcf0k2d5/HHys//vay7K0g3tYWHW+8bOu7vRm3/vFdR/G/Kqf924z4Kqfda/YUcszr69d/TqVnp+fXZZVDVoAujPQsjPaGpWnjnEppJrlWZ6lkIgHQaZp6tYETghZVoKz4kImVMYUXFqIatK8qEo7msQvU+/0aoZPRHF8fpds7Aw36sPeEFOcEErgFjgppb8Bn+fn5C8JLXEAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;vitis-ai.png&quot;
+        title=&quot;&quot;
+        src=&quot;/static/47c6e966676b931f98f8c2102b1c672f/f058b/vitis-ai.png&quot;
+        srcset=&quot;/static/47c6e966676b931f98f8c2102b1c672f/c26ae/vitis-ai.png 158w,
+/static/47c6e966676b931f98f8c2102b1c672f/6bdcf/vitis-ai.png 315w,
+/static/47c6e966676b931f98f8c2102b1c672f/f058b/vitis-ai.png 630w,
+/static/47c6e966676b931f98f8c2102b1c672f/42d54/vitis-ai.png 858w&quot;
+        sizes=&quot;(max-width: 630px) 100vw, 630px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;h3&gt;FPGA部分为什么重要&lt;/h3&gt;
+&lt;p&gt;如果说现实也有一个帧率&quot;现实帧率&quot;,那么FPGA的重要性就体现在FPGA可以提供更高的帧率,以图逼近现实帧率,
+更快地处理速度使FPGA在控制系统中具有十分重要的地位,这种价值在工业商业应用上体现在它的实时性上,
+换言之,只要工业商业对于实时性的要求不减,那么FPGA的地位就不会被取代&lt;/p&gt;
+&lt;h3&gt;异核处理器将成为主流&lt;/h3&gt;
+&lt;p&gt;FPGA的高速处理能力和ARM的通用处理能力结合,甚至更高端嵌入式的fpga+npu的结合,将成为主流.
+从Versal的架构中包含了PL,PS和ai引擎这一特征中,也可以看出这种结合的趋势&lt;/p&gt;
+&lt;p&gt;商业前景:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;车机系统,车机系统的要求是出于安全考虑要求实时性高,处理速度快,而且需要神经网络来进行识别和避障&lt;/li&gt;
+&lt;li&gt;工业控制系统,工业控制系统对于实时性的要求也是很高的,而且需要神经网络来进行识别和控制&lt;/li&gt;
+&lt;li&gt;搭载自动驾驶的无人机,理由同上&lt;/li&gt;
+&lt;/ol&gt;</content:encoded></item><item><title><![CDATA[zynq手写数字识别]]></title><description><![CDATA[总体设计  该图像由下述命令生成,精度较高,可点开大图详细观看 PL端: 读取ov5640摄像头采集的数据 使用Vitis HLS生成的IP核,将ov5640摄像头采集的rgb数据转为灰度数据,选定大小为112x112框,将框内灰度数据二值化,然后将灰度数据重新转为rgb…]]></description><link>https://zhexulong.github.io/zynq-mnist/</link><guid isPermaLink="false">https://zhexulong.github.io/zynq-mnist/</guid><pubDate>Fri, 06 Sep 2024 20:43:00 GMT</pubDate><content:encoded>&lt;h2&gt;总体设计&lt;/h2&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
       style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; &quot;
@@ -76,9 +179,7 @@
 &lt;p&gt;灰度数据转为rgb数据代码与之类似,不再赘述&lt;/p&gt;
 &lt;p&gt;模块总数据输入接口为axis流接口,输出接口为axis,并由vio控制ap_none类型的threshold变量的值&lt;/p&gt;
 &lt;h2&gt;神经网络具体实现&lt;/h2&gt;
-&lt;ol&gt;
-&lt;li&gt;从DDR中读取数据,并将数据传入神经网络中&lt;/li&gt;
-&lt;/ol&gt;
+&lt;h3&gt;1. 从DDR中读取数据,并将数据传入神经网络中&lt;/h3&gt;
 &lt;p&gt;(注意:cmos_data的index需要乘3是因为cmos_data是rgb数据,实际我们只取了其中的一个通道作为灰度数据,这与我们对灰度转rgb的处理是相对应的)&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;cpp&quot;&gt;&lt;pre class=&quot;language-cpp&quot;&gt;&lt;code class=&quot;language-cpp&quot;&gt;    &lt;span class=&quot;token comment&quot;&gt;// 初始化&lt;/span&gt;
     &lt;span class=&quot;token keyword&quot;&gt;unsigned&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; frame_buffer_addr &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;XPAR_PS7_DDR_0_S_AXI_BASEADDR
@@ -99,9 +200,7 @@
                 &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
             &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
         &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;ol start=&quot;2&quot;&gt;
-&lt;li&gt;神经网络各部分实现(以卷积层为例)&lt;/li&gt;
-&lt;/ol&gt;
+&lt;h3&gt;2. 神经网络各部分实现(以卷积层为例)&lt;/h3&gt;
 &lt;p&gt;(为了保存中间数据,我们将数据保存到了ddr中的某个特定地址)
 下面是卷积层的实现&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;cpp&quot;&gt;&lt;pre class=&quot;language-cpp&quot;&gt;&lt;code class=&quot;language-cpp&quot;&gt;    &lt;span class=&quot;token comment&quot;&gt;// 初始化&lt;/span&gt;
@@ -135,9 +234,7 @@
                 &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
             &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
         &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;ol start=&quot;3&quot;&gt;
-&lt;li&gt;输出&lt;/li&gt;
-&lt;/ol&gt;
+&lt;h3&gt;3. 输出&lt;/h3&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;cpp&quot;&gt;&lt;pre class=&quot;language-cpp&quot;&gt;&lt;code class=&quot;language-cpp&quot;&gt;        &lt;span class=&quot;token keyword&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;int&lt;/span&gt; n&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; n&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; n&lt;span class=&quot;token operator&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
         &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
             affine2_temp &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
