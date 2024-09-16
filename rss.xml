@@ -1,4 +1,282 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[A blog about computer science, mathematics, and life.]]></description><link>https://zhexulong.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Sat, 07 Sep 2024 06:47:36 GMT</lastBuildDate><item><title><![CDATA[zynq经历与预测]]></title><description><![CDATA[经验 Vivado使用经验 doesn't exist问题/自定义ip核not found问题(HLS ip核尤其可能发生)/任何block design的奇怪问题 先尝试重新打开vivado,如果没解决,进行下一步 在block design中删除对应ip…]]></description><link>https://zhexulong.github.io/zynq-prediction/</link><guid isPermaLink="false">https://zhexulong.github.io/zynq-prediction/</guid><pubDate>Sat, 07 Sep 2024 01:43:00 GMT</pubDate><content:encoded>&lt;h2&gt;经验&lt;/h2&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[A blog about computer science, mathematics, and life.]]></description><link>https://zhexulong.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Mon, 16 Sep 2024 18:17:11 GMT</lastBuildDate><item><title><![CDATA[在rviz2中仿真并操控h1机器人]]></title><description><![CDATA[本文对应源码:仓库地址 摄像头采集 在windows中使用ffmpeg发送给wsl2,通过下面命令: 在wsl2中使用opencv接收,并显示: yolo v7得到关节数据并估计关节角 yolo v7进行pose-estimation的仓库:地址 找到keypoint…]]></description><link>https://zhexulong.github.io/rviz2_h1_robot/</link><guid isPermaLink="false">https://zhexulong.github.io/rviz2_h1_robot/</guid><pubDate>Invalid Date</pubDate><content:encoded>&lt;p&gt;本文对应源码:&lt;a href=&quot;https://github.com/zhexulong/h1_rviz2&quot;&gt;仓库地址&lt;/a&gt;&lt;/p&gt;
+&lt;h2&gt;摄像头采集&lt;/h2&gt;
+&lt;p&gt;在windows中使用ffmpeg发送给wsl2,通过下面命令:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;powershell&quot;&gt;&lt;pre class=&quot;language-powershell&quot;&gt;&lt;code class=&quot;language-powershell&quot;&gt;ffmpeg &lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt;f dshow &lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt;i video=&lt;span class=&quot;token string&quot;&gt;&quot;1080P USB Camera&quot;&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt;preset ultrafast &lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt;tune zerolatency &lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt;vcodec libx264 &lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt;f mpegts udp:&amp;lt;ip&gt;:&amp;lt;port&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;在wsl2中使用opencv接收,并显示:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;python&quot;&gt;&lt;pre class=&quot;language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; cv2
+cap &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; cv2&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;VideoCapture&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;udp://&amp;lt;ip&gt;:&amp;lt;port&gt;&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;while&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;cap&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;isOpened&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+    ret&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; frame &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; cap&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;read&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; ret&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;token operator&quot;&gt;//&lt;/span&gt; do something&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2&gt;yolo v7得到关节数据并估计关节角&lt;/h2&gt;
+&lt;p&gt;yolo v7进行pose-estimation的仓库:&lt;a href=&quot;https://github.com/RizwanMunawar/yolov7-pose-estimation&quot;&gt;地址&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;找到keypoint landmark order,据此可得我们所需的左胳膊需要(5,7,9)三个关节点来计算关节角&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/0f5c749f4d81efa67d529a8aa34f57fc/940c5/landmark.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 79.74683544303798%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAQCAIAAACZeshMAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAz0lEQVR42r1T0W7DIAy0jQ12aBNwQ5JWlSZN+/9vHO37ttKHWZaQBac7TmeAHwuf/c/FKZ33u9WNowyDkTDkcxBlEsQR8RjCbf5YqRaoX9fD3QbAsSz3+TNCF0xt0+OwnF8Tj4J2dWc3ehB6TZ25tfy4+lP+6XYKmRXU46WPrRkzvfZrBGLqpwBvaevjsU8iPGz4HvdueWtKNBgVQVm5qbF7GqadaJqxJIP1kt8BL1QTwWppOOHd8WKuCAsSjKLp+X5CrCHAe8sVAYrqL+H4Bmu1B7SglP0DAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;landmark.png&quot;
+        title=&quot;&quot;
+        src=&quot;/static/0f5c749f4d81efa67d529a8aa34f57fc/f058b/landmark.png&quot;
+        srcset=&quot;/static/0f5c749f4d81efa67d529a8aa34f57fc/c26ae/landmark.png 158w,
+/static/0f5c749f4d81efa67d529a8aa34f57fc/6bdcf/landmark.png 315w,
+/static/0f5c749f4d81efa67d529a8aa34f57fc/f058b/landmark.png 630w,
+/static/0f5c749f4d81efa67d529a8aa34f57fc/940c5/landmark.png 772w&quot;
+        sizes=&quot;(max-width: 630px) 100vw, 630px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;python&quot;&gt;&lt;pre class=&quot;language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;angle_between_points&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt; p0&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; p1&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; p2 &lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+    a &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;p1&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt;p0&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;**&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;2&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;p1&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt;p0&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;**&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;2&lt;/span&gt;
+    b &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;p1&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt;p2&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;**&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;2&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;p1&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt;p2&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;**&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;2&lt;/span&gt;
+    c &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;p2&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt;p0&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;**&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;2&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;p2&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt;p0&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;**&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;2&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; a &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt; b &lt;span class=&quot;token operator&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;1.0&lt;/span&gt; 
+    
+    &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt;  math&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;acos&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;a&lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt;b&lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt;c&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt; math&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;sqrt&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;a&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;b&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;get_angle_point&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;human&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; pos&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; steps&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+    pnts &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;
+ 
+    &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; pos &lt;span class=&quot;token operator&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;left_elbow&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+        pos_list &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;7&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;9&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+    
+    &lt;span class=&quot;token keyword&quot;&gt;for&lt;/span&gt; i &lt;span class=&quot;token keyword&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+        pnts&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;append&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token builtin&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt; human&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt; pos_list&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;i&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;steps&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt; human&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt; pos_list&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;i&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;steps&lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; pnts
+
+&lt;span class=&quot;token keyword&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;angle_left_elbow&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;human&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+    pnts &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; get_angle_point&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;human&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;left_elbow&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;pnts&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;!=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;token keyword&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;component incomplete&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt;
+ 
+    angle &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; pnts &lt;span class=&quot;token keyword&quot;&gt;is&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;not&lt;/span&gt; &lt;span class=&quot;token boolean&quot;&gt;None&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+        angle &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; angle_between_points&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;pnts&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; pnts&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; pnts&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;token keyword&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;left elbow angle:%f&apos;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;angle&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+    send_angle_to_local&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;angle&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; angle
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2&gt;joint_state_publisher节点操控宇树h1机器人&lt;/h2&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;python&quot;&gt;&lt;pre class=&quot;language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;#!/usr/bin/env python3&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; rclpy
+&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; rclpy&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;node &lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; Node
+&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; threading
+&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; sensor_msgs&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;msg &lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; JointState
+&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; math &lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; pi
+&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; socket
+
+
+&lt;span class=&quot;token keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;RotateWheelNode&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;Node&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;__init__&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;self&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; name&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;token builtin&quot;&gt;super&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;__init__&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;name&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+        self&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;get_logger&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;info&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string-interpolation&quot;&gt;&lt;span class=&quot;token string&quot;&gt;f&quot;node &lt;/span&gt;&lt;span class=&quot;token interpolation&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;name&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt; init..&quot;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+        self&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;pub_joint_state_ &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; self&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;create_publisher&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;JointState&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;/joint_states&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+        self&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;_init_joint_states&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+        self&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;pub_rate &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; self&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;create_rate&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+        self&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;thread_ &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; threading&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;Thread&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;target&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;self&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;_thread_pub&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+        self&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;thread_&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;start&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+
+    &lt;span class=&quot;token keyword&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;_init_joint_states&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;self&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+        self&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;joint_states_ &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; JointState&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+        self&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;joint_states_&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;name &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;
+            &lt;span class=&quot;token string&quot;&gt;&quot;left_hip_yaw_joint&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+            &lt;span class=&quot;token string&quot;&gt;&quot;left_hip_roll_joint&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+            &lt;span class=&quot;token string&quot;&gt;&quot;left_hip_pitch_joint&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+            &lt;span class=&quot;token string&quot;&gt;&quot;left_knee_joint&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+            &lt;span class=&quot;token string&quot;&gt;&quot;left_ankle_joint&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+            &lt;span class=&quot;token string&quot;&gt;&quot;right_hip_yaw_joint&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+            &lt;span class=&quot;token string&quot;&gt;&quot;right_hip_roll_joint&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+            &lt;span class=&quot;token string&quot;&gt;&quot;right_hip_pitch_joint&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+            &lt;span class=&quot;token string&quot;&gt;&quot;right_knee_joint&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+            &lt;span class=&quot;token string&quot;&gt;&quot;right_ankle_joint&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+            &lt;span class=&quot;token string&quot;&gt;&quot;torso_joint&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+            &lt;span class=&quot;token string&quot;&gt;&quot;left_shoulder_pitch_joint&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+            &lt;span class=&quot;token string&quot;&gt;&quot;left_shoulder_roll_joint&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+            &lt;span class=&quot;token string&quot;&gt;&quot;left_shoulder_yaw_joint&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+            &lt;span class=&quot;token string&quot;&gt;&quot;left_elbow_joint&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+            &lt;span class=&quot;token string&quot;&gt;&quot;left_hand_joint&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+            &lt;span class=&quot;token string&quot;&gt;&quot;L_thumb_proximal_yaw_joint&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+            &lt;span class=&quot;token string&quot;&gt;&quot;L_thumb_proximal_pitch_joint&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+            &lt;span class=&quot;token string&quot;&gt;&quot;L_thumb_intermediate_joint&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+            &lt;span class=&quot;token string&quot;&gt;&quot;L_thumb_distal_joint&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+            &lt;span class=&quot;token string&quot;&gt;&quot;L_index_proximal_joint&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+            &lt;span class=&quot;token string&quot;&gt;&quot;L_index_intermediate_joint&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+            &lt;span class=&quot;token string&quot;&gt;&quot;L_middle_proximal_joint&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+            &lt;span class=&quot;token string&quot;&gt;&quot;L_middle_intermediate_joint&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+            &lt;span class=&quot;token string&quot;&gt;&quot;L_ring_proximal_joint&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+            &lt;span class=&quot;token string&quot;&gt;&quot;L_ring_intermediate_joint&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+            &lt;span class=&quot;token string&quot;&gt;&quot;L_pinky_proximal_joint&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+            &lt;span class=&quot;token string&quot;&gt;&quot;L_pinky_intermediate_joint&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+            &lt;span class=&quot;token string&quot;&gt;&quot;right_shoulder_pitch_joint&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+            &lt;span class=&quot;token string&quot;&gt;&quot;right_shoulder_roll_joint&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+            &lt;span class=&quot;token string&quot;&gt;&quot;right_shoulder_yaw_joint&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+            &lt;span class=&quot;token string&quot;&gt;&quot;right_elbow_joint&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+            &lt;span class=&quot;token string&quot;&gt;&quot;right_hand_joint&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+            &lt;span class=&quot;token string&quot;&gt;&quot;R_thumb_proximal_yaw_joint&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+            &lt;span class=&quot;token string&quot;&gt;&quot;R_thumb_proximal_pitch_joint&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+            &lt;span class=&quot;token string&quot;&gt;&quot;R_thumb_intermediate_joint&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+            &lt;span class=&quot;token string&quot;&gt;&quot;R_thumb_distal_joint&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+            &lt;span class=&quot;token string&quot;&gt;&quot;R_index_proximal_joint&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+            &lt;span class=&quot;token string&quot;&gt;&quot;R_index_intermediate_joint&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+            &lt;span class=&quot;token string&quot;&gt;&quot;R_middle_proximal_joint&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+            &lt;span class=&quot;token string&quot;&gt;&quot;R_middle_intermediate_joint&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+            &lt;span class=&quot;token string&quot;&gt;&quot;R_ring_proximal_joint&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+            &lt;span class=&quot;token string&quot;&gt;&quot;R_ring_intermediate_joint&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+            &lt;span class=&quot;token string&quot;&gt;&quot;R_pinky_proximal_joint&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+            &lt;span class=&quot;token string&quot;&gt;&quot;R_pinky_intermediate_joint&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;
+
+        self&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;joint_states_&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;position &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;0.0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;self&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;joint_states_&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;name&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+        self&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;joint_states_&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;header&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;stamp &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; self&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;get_clock&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;now&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;to_msg&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+        self&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;joint_states_&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;header&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;frame_id &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;&quot;&lt;/span&gt;
+        self&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;joint_states_&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;velocity &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;
+        self&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;joint_states_&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;effort &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;
+
+    &lt;span class=&quot;token keyword&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;get_angle&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;self&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+        sock &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; socket&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;socket&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;socket&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;AF_INET&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; socket&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;SOCK_DGRAM&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+        server_address &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;localhost&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;12345&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+        sock&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;bind&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;server_address&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+
+        data&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; address &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; sock&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;recvfrom&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;4096&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+        angle &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;float&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;data&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;decode&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+        self&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;get_logger&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;info&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;
+            &lt;span class=&quot;token string-interpolation&quot;&gt;&lt;span class=&quot;token string&quot;&gt;f&quot;received &lt;/span&gt;&lt;span class=&quot;token interpolation&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;data&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;decode&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt; from &lt;/span&gt;&lt;span class=&quot;token interpolation&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;address&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;, angle: &lt;/span&gt;&lt;span class=&quot;token interpolation&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;angle&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt;
+        &lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; angle
+
+    &lt;span class=&quot;token keyword&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;_thread_pub&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;self&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;token keyword&quot;&gt;while&lt;/span&gt; rclpy&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;ok&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+            index &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; self&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;joint_states_&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;name&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;index&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;left_elbow_joint&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+            self&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;joint_states_&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;position&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;index&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; self&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;get_angle&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt; pi &lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;2&lt;/span&gt; 
+            &lt;span class=&quot;token comment&quot;&gt;# self.joint_states_.position[0] += pi&lt;/span&gt;
+            self&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;joint_states_&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;header&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;stamp &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; self&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;get_clock&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;now&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;to_msg&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+            self&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;pub_joint_state_&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;publish&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;self&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;joint_states_&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+            self&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;get_logger&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;info&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string-interpolation&quot;&gt;&lt;span class=&quot;token string&quot;&gt;f&quot;publishing &lt;/span&gt;&lt;span class=&quot;token interpolation&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;self&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;joint_states_&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;position&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;index&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+            self&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;pub_rate&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;sleep&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+
+
+&lt;span class=&quot;token keyword&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;args&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token boolean&quot;&gt;None&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+    rclpy&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;init&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;args&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;args&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+    node &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; RotateWheelNode&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;move_h1_joints&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+    rclpy&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;spin&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;node&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+    rclpy&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;shutdown&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;注意,由于h1机器人的肘部关节角是相对于水平方向的,所以需要减去pi/2&lt;/p&gt;
+&lt;h2&gt;rviz2仿真结果&lt;/h2&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/5bf7c647fe3e4ea027e3ac90c80872c8/e35ec/img.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 72.15189873417721%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAOCAIAAACgpqunAAAACXBIWXMAAAsTAAALEwEAmpwYAAACRklEQVR42m2SS27aUBiFvQ4GeUBARUGEgCpQ2AJDBMqMORKJmnQTLAAESCyCBXRSVU2gA0riuH4Sgg02NgbMyzzdE1yiqMoZ/Fzs+93z+9yfqFZrgiA8PpI8x4rtliSKiqLIcldRe6IkSh1JVmSl2+12JFXrKz0VS1VVZVkW223ix8/7R5LkeIFmaF4Qhvogm83GYrHLy8tEMpFMJhOJ1xqPx1OpVL1ebzQaDw8PFEU1eZ7gOLYrtSfGaDo21suFZVnpdNrhcJyenn7ay+v1ejyes7OzZrMpSdLz87OmaavVivhWZ+4YsdHWOW321B0PFtbX2xsA4XD48zuFQqFoNNpqtdA2YHzaer0mvv9mqn9ajZbKq2NKNgamdXvzxe1220AwGAzthMXFxQWw5XI5mUz6/f58PieQ09LEYm4M9fVqibavr68BBwIBn88H5vz8HNXv90ciEThjw2azsXYiSJrt9EfT2dw0F/ZTGwZwcnLyBuMswHC24e12+wpzSIzjR6PR25FXV1culwtWR0dHgb2Q1nv4nzPLMMhgOByapokMbGekDf7w8BCY7fwxLAhNRGcYBq5e13UbBgnA6XTC33bGAvn/D+O60Tl4ZDabzey28bUAcL2wtc0/hl9eXqZ7oXM8ymQyBwcH2H18fIxR8e2Eg9CLnTbGw86MqNV+CXuxLIvXlUoll8uVSqV8Pl8sFguFAir+lstlkiSxh9qJpp6Iu7t7DB1IVLzAr6b1MfdIUdlJFMVer4dEkUin08F4omIzQ9N/AWE2KyKp5AikAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;img.png&quot;
+        title=&quot;&quot;
+        src=&quot;/static/5bf7c647fe3e4ea027e3ac90c80872c8/f058b/img.png&quot;
+        srcset=&quot;/static/5bf7c647fe3e4ea027e3ac90c80872c8/c26ae/img.png 158w,
+/static/5bf7c647fe3e4ea027e3ac90c80872c8/6bdcf/img.png 315w,
+/static/5bf7c647fe3e4ea027e3ac90c80872c8/f058b/img.png 630w,
+/static/5bf7c647fe3e4ea027e3ac90c80872c8/e35ec/img.png 861w&quot;
+        sizes=&quot;(max-width: 630px) 100vw, 630px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;
+&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/24522790d81286886228690e28905848/77800/img_1.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 70.88607594936708%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAOCAIAAACgpqunAAAACXBIWXMAAAsTAAALEwEAmpwYAAACSUlEQVR42l2T7U7acBTGexd8MAESmQRN5G3irRC+OW/AhRBbqHfBJXgTW0z2aRkuvOkQgX+FllIpL2sLpa3aFvasHc74QJoDPb/znPPvKXV7ezuZTHhemExkTVMURX2yLNdx3LVrWuZqtXLww7adlxfHdVcrY7lc6rququpoNKK+Xn2r1mqNZrN5c9NqtUZD8fLy8vPZWemCpRm6VCoxRXwY+vycZdlarY6c+/v7TqfTJ4TiOCKJwnKhKb9nlqFvNpt8Ph8IBGKx2Iet9vb2cI1EIpVKZTgcttttQRBgTn3/1b3pS+RRkTRrqFrmesOyJWQfHx9/3Oro6O83lUphxvl8PhgMcHUch/pS7V41H34QuSXrPwVVNjcXbAk+mUwmnU4DSHtCiWQy2Wg0DMMAOR6PEVAPHPds6E+WudQU++UZbTMMgw6BHR4epjz5VRKJBGAkuK679kS1Oz1laZiWtTIM23Fxj6ZpH0bzcAOT9IRa9XodCWh444nqEq7XFxa6jkoo6cO7u7twC4fDryQUj8ffw1yvNxJFTdNcTz4cDAaj0WgoFAKQ2Aqx3/Z/uEfIdDrFc8d+YAHwV7FYhOf+/j5gf+xX5/cwIRzP87PZDMsEfx/GaeN4Dw4OUm8Ec79t27b/HRjHcXBWVBVHb1kW7hUKhZ2dHZBwjr0RBnk/893dHWBZlvHoJElaLBblcjmbzZ6enuZyuZOTk09bIa5Wq3gRBIHHhg15nqpcX3c9oQUsLSEEI6AWCqEcAlEUASieEGO9QCK5027/ASj7KIpz2aabAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;img_1.png&quot;
+        title=&quot;&quot;
+        src=&quot;/static/24522790d81286886228690e28905848/f058b/img_1.png&quot;
+        srcset=&quot;/static/24522790d81286886228690e28905848/c26ae/img_1.png 158w,
+/static/24522790d81286886228690e28905848/6bdcf/img_1.png 315w,
+/static/24522790d81286886228690e28905848/f058b/img_1.png 630w,
+/static/24522790d81286886228690e28905848/77800/img_1.png 855w&quot;
+        sizes=&quot;(max-width: 630px) 100vw, 630px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;
+&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/0649aea8e92310e7be0cbb8ca01c581c/33e10/img_2.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 72.15189873417721%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAOCAIAAACgpqunAAAACXBIWXMAAAsTAAALEwEAmpwYAAACZklEQVR42l1T7U7aYBh9r4F/amKIgBM0ERkY72UqP/jwh0sUJjeCuyAmLG5my0AQKKUUCqUt/USgIGWwQxsXtwN50rx9z3Oe83AglUqlWq0Wi0WKqrFsCx9ZlnVd1wxdURRVU1Vd0zVNU2TDGAqi1O12eZ7v2SAPP34WS6VavYEWDZoW+P7n29vT0w/JZDIWi8Xj8Vg8lkgk8IyTfOHrk416vV6r1YgiS0KPG+raZDRczF9Wq9Xl5cetra1AIPDuFXt7e6i7u7u5XE4QBJBRmRZLvjX4B6pb6WmsZlKDiTyeZ25ucP/4+Pj9vzg6Orq/v4cjhmFgi252yHeq96XU/NWW6cG4IozE55dP6bTH6w2FQrh9eHgYDAbxgIrnQqEwm82wAZCrTw2iyoOZOTEnk/FQX/5eAKlUCnNGIpH9/X0Ihl4Bfj6fhy/LslDbbZ5wvKAYI3M6xXe5Ws0tK5PJgHZycuL3+2EVHFgIh8NoBOW/ZIbpkr4o1RpN0zSXy6X9Yq2M3eAq6sbGhsfjcQwDb5VbDEckUeQ6ndHoGQPjaLGwQIYgxvZ6vSBvbm46zP/HbnXJYCCLkjQej1VVRcWL6+trn8+H9UDZ7Xa7XC70gjhOHPLCWsuIvETwizWbTYcJYJnpdBq3HZPoAv/YnzP5W2VNUQjCKEmSYRiwPZ/PcXp1dbW9vX1wcICcwLDPxs7ODrrc3d3Z1tbK0+mUcBwn2sAI/X4fvbLZ7Pn5+cXFBVKJeJ6dnaFGo1HEE9uGUrvd7tgg5XIZKaUoiqZp5A4VfDRC+tELTZ3uGA3ZwJ+BZVmQEbLHUukPYvAfql+riHEAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;img_2.png&quot;
+        title=&quot;&quot;
+        src=&quot;/static/0649aea8e92310e7be0cbb8ca01c581c/f058b/img_2.png&quot;
+        srcset=&quot;/static/0649aea8e92310e7be0cbb8ca01c581c/c26ae/img_2.png 158w,
+/static/0649aea8e92310e7be0cbb8ca01c581c/6bdcf/img_2.png 315w,
+/static/0649aea8e92310e7be0cbb8ca01c581c/f058b/img_2.png 630w,
+/static/0649aea8e92310e7be0cbb8ca01c581c/33e10/img_2.png 844w&quot;
+        sizes=&quot;(max-width: 630px) 100vw, 630px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;h2&gt;反思&lt;/h2&gt;
+&lt;p&gt;摄像头其实并不适合用来做关节角的估计,因为摄像头的数据是二维的,而关节角是三维的,所以在多数情况下,
+关节角的估计是不准确的,所以在实际应用中,还是应该使用传感器如IMU来获取关节角&lt;/p&gt;</content:encoded></item><item><title><![CDATA[zynq经历与预测]]></title><description><![CDATA[经验 Vivado使用经验 doesn't exist问题/自定义ip核not found问题(HLS ip核尤其可能发生)/任何block design的奇怪问题 先尝试重新打开vivado,如果没解决,进行下一步 在block design中删除对应ip…]]></description><link>https://zhexulong.github.io/zynq-prediction/</link><guid isPermaLink="false">https://zhexulong.github.io/zynq-prediction/</guid><pubDate>Sat, 07 Sep 2024 01:43:00 GMT</pubDate><content:encoded>&lt;h2&gt;经验&lt;/h2&gt;
 &lt;h3&gt;Vivado使用经验&lt;/h3&gt;
 &lt;h4&gt;doesn&apos;t exist问题/自定义ip核not found问题(HLS ip核尤其可能发生)/任何block design的奇怪问题&lt;/h4&gt;
 &lt;ol&gt;
