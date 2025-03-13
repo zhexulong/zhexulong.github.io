@@ -384,7 +384,20 @@
                         <span class="token punctuation">]</span>
                     <span class="token punctuation">)</span>
                     label_idx <span class="token operator">+=</span> <span class="token number">1</span></code></pre></div>
+<h2 id="sfM流程" style="position:relative;">sfM流程<a href="#sfM%E6%B5%81%E7%A8%8B" aria-label="sfM流程 permalink" class="custom-class after"><svg aria-hidden="true" height="20" version="1.1" viewBox="0 0 16 16" width="20"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h2>
+<ul>
+<li>描述子: 是一种用于描述图像特征的向量,可以用于特征匹配</li>
+<li>常用描述子: SIFT, SURF, ORB等</li>
+</ul>
+<p>流程:</p>
+<ol>
+<li>特征提取: 提取图像中的特征点</li>
+<li>特征匹配: 通过描述子匹配,找到两幅图像中的对应点</li>
+<li>求解本质矩阵: 通过对应点,求解本质矩阵</li>
+<li>三角测量: 通过本质矩阵,求解三维点坐标</li>
+</ol>
 <h2 id="orb-slam" style="position:relative;">orb-slam<a href="#orb-slam" aria-label="orb slam permalink" class="custom-class after"><svg aria-hidden="true" height="20" version="1.1" viewBox="0 0 16 16" width="20"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h2>
+<p>使用orb描述子</p>
 <p><span
       class="gatsby-resp-image-wrapper"
       style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; "
@@ -418,13 +431,59 @@
   </a>
     </span></p>
 <p>闭环检测: 判断是否是同一张图(通过描述子匹配,orb-slam中使用了词袋模型)</p>
-<h2 id="3DGS流程" style="position:relative;">3DGS流程<a href="#3DGS%E6%B5%81%E7%A8%8B" aria-label="3DGS流程 permalink" class="custom-class after"><svg aria-hidden="true" height="20" version="1.1" viewBox="0 0 16 16" width="20"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h2>
+<h2 id="3DGS3d-gaussian-splatting流程" style="position:relative;">3DGS(3d gaussian splatting)流程<a href="#3DGS3d-gaussian-splatting%E6%B5%81%E7%A8%8B" aria-label="3DGS3d gaussian splatting流程 permalink" class="custom-class after"><svg aria-hidden="true" height="20" version="1.1" viewBox="0 0 16 16" width="20"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h2>
+<ul>
+<li>3d gaussian: 三维高斯球</li>
+<li>Splatting: 将3d投影到图像平面</li>
+</ul>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/0cf713227c171f5ea915e21cc6abe253/07a9c/3dgs-pipeline.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 20.253164556962027%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAECAIAAAABPYjBAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAsElEQVR42mWOSw6CMBRF2f9G3IELMM6dSQQk/Foo1PLa1/ZREZXghMQzvrnnRJ8/vPMGtEWU8tGJnvN2BHgty37z3ohCCEQ0zzNv24Zxcr6R4hxfHIUH6E6IhrFRGzC2KMo0u/f9YK3zG5FzDhGnaSrLKstz1Fh0zeF0NNaSJ8Z4Vdca16s5u+fXa8xagT7ARvT72CcRTUbrZwirIUmzW5JKpdY0pRSMsJrQ0yAlAHwBLH3hfxNt5IgAAAAASUVORK5CYII='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="img.png"
+        title=""
+        src="/static/0cf713227c171f5ea915e21cc6abe253/f058b/3dgs-pipeline.png"
+        srcset="/static/0cf713227c171f5ea915e21cc6abe253/c26ae/3dgs-pipeline.png 158w,
+/static/0cf713227c171f5ea915e21cc6abe253/6bdcf/3dgs-pipeline.png 315w,
+/static/0cf713227c171f5ea915e21cc6abe253/f058b/3dgs-pipeline.png 630w,
+/static/0cf713227c171f5ea915e21cc6abe253/40601/3dgs-pipeline.png 945w,
+/static/0cf713227c171f5ea915e21cc6abe253/78612/3dgs-pipeline.png 1260w,
+/static/0cf713227c171f5ea915e21cc6abe253/07a9c/3dgs-pipeline.png 1440w"
+        sizes="(max-width: 630px) 100vw, 630px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+  </a>
+    </span></p>
+<ol>
+<li>通过sfM获得初始3d点</li>
+<li>将三维投影到2d image与原image做loss,通过优化得到更好的3d点</li>
+<li><a href="https://zhuanlan.zhihu.com/p/680669616">点密集化+点剪枝</a>(Adaptive Density Control过程)</li>
+</ol>
 <h2 id="参考" style="position:relative;">参考<a href="#%E5%8F%82%E8%80%83" aria-label="参考 permalink" class="custom-class after"><svg aria-hidden="true" height="20" version="1.1" viewBox="0 0 16 16" width="20"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h2>
-<p><a href="https://cv-xueba.club/pages/courses/cv_sfm.html">视觉重建ppt</a>
-<a href="https://arxiv.org/html/2401.12202v2">ok-robot论文</a></p></section><hr/><footer><div class="bio"><div data-gatsby-image-wrapper="" style="width:50px;height:50px" class="gatsby-image-wrapper bio-avatar"><div aria-hidden="true" data-placeholder-image="" style="opacity:1;transition:opacity 500ms linear;background-color:#f8f8f8;width:50px;height:50px;position:relative"></div><picture><source type="image/avif" data-srcset="/static/83f785c7ee60c8943e04a0cdcc119056/d4bf4/miku.avif 50w,/static/83f785c7ee60c8943e04a0cdcc119056/ee81f/miku.avif 100w" sizes="50px"/><source type="image/webp" data-srcset="/static/83f785c7ee60c8943e04a0cdcc119056/3faea/miku.webp 50w,/static/83f785c7ee60c8943e04a0cdcc119056/6a679/miku.webp 100w" sizes="50px"/><img data-gatsby-image-ssr="" layout="fixed" data-main-image="" style="opacity:0" sizes="50px" decoding="async" loading="lazy" data-src="/static/83f785c7ee60c8943e04a0cdcc119056/e5610/miku.png" data-srcset="/static/83f785c7ee60c8943e04a0cdcc119056/e5610/miku.png 50w,/static/83f785c7ee60c8943e04a0cdcc119056/e9b55/miku.png 100w" alt="Profile picture"/></picture><noscript><picture><source type="image/avif" srcSet="/static/83f785c7ee60c8943e04a0cdcc119056/d4bf4/miku.avif 50w,/static/83f785c7ee60c8943e04a0cdcc119056/ee81f/miku.avif 100w" sizes="50px"/><source type="image/webp" srcSet="/static/83f785c7ee60c8943e04a0cdcc119056/3faea/miku.webp 50w,/static/83f785c7ee60c8943e04a0cdcc119056/6a679/miku.webp 100w" sizes="50px"/><img data-gatsby-image-ssr="" layout="fixed" data-main-image="" style="opacity:0" sizes="50px" decoding="async" loading="lazy" src="/static/83f785c7ee60c8943e04a0cdcc119056/e5610/miku.png" srcSet="/static/83f785c7ee60c8943e04a0cdcc119056/e5610/miku.png 50w,/static/83f785c7ee60c8943e04a0cdcc119056/e9b55/miku.png 100w" alt="Profile picture"/></picture></noscript><script type="module">const t="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;if(t){const t=document.querySelectorAll("img[data-main-image]");for(let e of t){e.dataset.src&&(e.setAttribute("src",e.dataset.src),e.removeAttribute("data-src")),e.dataset.srcset&&(e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset"));const t=e.parentNode.querySelectorAll("source[data-srcset]");for(let e of t)e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset");e.complete&&(e.style.opacity=1,e.parentNode.parentNode.querySelector("[data-placeholder-image]").style.opacity=0)}}</script></div><p>Written by <strong>Prosumer</strong> <!-- --> ,<!-- --> <!-- -->an undergraduate student at ShanghaiTech.<!-- --> <br/><a href="https://github.com/zhexulong">Welcome to my GitHub:)</a></p></div></footer></article><nav class="blog-post-nav"><ul style="display:flex;flex-wrap:wrap;justify-content:space-between;list-style:none;padding:0"><li><a rel="prev" href="/fpga-timing-intra/">← <!-- -->fpga intra-clock时序分析</a></li><li><a rel="next" href="/multi-sensor-fusion/">多模态多传感器融合<!-- --> →</a></li></ul></nav><div></div></main><footer>© <!-- -->2025<!-- -->, Built with<!-- --> <a href="https://www.gatsbyjs.com">Gatsby</a></footer></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/3d-reconstruction-basic/";/*]]>*/</script><!-- slice-start id="_gatsby-scripts-1" -->
+<ul>
+<li><a href="https://cv-xueba.club/pages/courses/cv_sfm.html">视觉重建ppt</a></li>
+<li><a href="https://arxiv.org/html/2401.12202v2">ok-robot论文</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/680669616">点密集化+点剪枝</a></li>
+<li><a href="https://github.com/graphdeco-inria/gaussian-splatting">3dgs github</a></li>
+</ul></section><hr/><footer><div class="bio"><div data-gatsby-image-wrapper="" style="width:50px;height:50px" class="gatsby-image-wrapper bio-avatar"><div aria-hidden="true" data-placeholder-image="" style="opacity:1;transition:opacity 500ms linear;background-color:#f8f8f8;width:50px;height:50px;position:relative"></div><picture><source type="image/avif" data-srcset="/static/83f785c7ee60c8943e04a0cdcc119056/d4bf4/miku.avif 50w,/static/83f785c7ee60c8943e04a0cdcc119056/ee81f/miku.avif 100w" sizes="50px"/><source type="image/webp" data-srcset="/static/83f785c7ee60c8943e04a0cdcc119056/3faea/miku.webp 50w,/static/83f785c7ee60c8943e04a0cdcc119056/6a679/miku.webp 100w" sizes="50px"/><img data-gatsby-image-ssr="" layout="fixed" data-main-image="" style="opacity:0" sizes="50px" decoding="async" loading="lazy" data-src="/static/83f785c7ee60c8943e04a0cdcc119056/e5610/miku.png" data-srcset="/static/83f785c7ee60c8943e04a0cdcc119056/e5610/miku.png 50w,/static/83f785c7ee60c8943e04a0cdcc119056/e9b55/miku.png 100w" alt="Profile picture"/></picture><noscript><picture><source type="image/avif" srcSet="/static/83f785c7ee60c8943e04a0cdcc119056/d4bf4/miku.avif 50w,/static/83f785c7ee60c8943e04a0cdcc119056/ee81f/miku.avif 100w" sizes="50px"/><source type="image/webp" srcSet="/static/83f785c7ee60c8943e04a0cdcc119056/3faea/miku.webp 50w,/static/83f785c7ee60c8943e04a0cdcc119056/6a679/miku.webp 100w" sizes="50px"/><img data-gatsby-image-ssr="" layout="fixed" data-main-image="" style="opacity:0" sizes="50px" decoding="async" loading="lazy" src="/static/83f785c7ee60c8943e04a0cdcc119056/e5610/miku.png" srcSet="/static/83f785c7ee60c8943e04a0cdcc119056/e5610/miku.png 50w,/static/83f785c7ee60c8943e04a0cdcc119056/e9b55/miku.png 100w" alt="Profile picture"/></picture></noscript><script type="module">const t="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;if(t){const t=document.querySelectorAll("img[data-main-image]");for(let e of t){e.dataset.src&&(e.setAttribute("src",e.dataset.src),e.removeAttribute("data-src")),e.dataset.srcset&&(e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset"));const t=e.parentNode.querySelectorAll("source[data-srcset]");for(let e of t)e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset");e.complete&&(e.style.opacity=1,e.parentNode.parentNode.querySelector("[data-placeholder-image]").style.opacity=0)}}</script></div><p>Written by <strong>Prosumer</strong> <!-- --> ,<!-- --> <!-- -->an undergraduate student at ShanghaiTech.<!-- --> <br/><a href="https://github.com/zhexulong">Welcome to my GitHub:)</a></p></div></footer></article><nav class="blog-post-nav"><ul style="display:flex;flex-wrap:wrap;justify-content:space-between;list-style:none;padding:0"><li><a rel="prev" href="/fpga-timing-intra/">← <!-- -->fpga intra-clock时序分析</a></li><li><a rel="next" href="/multi-sensor-fusion/">多模态多传感器融合<!-- --> →</a></li></ul></nav><div></div></main><footer>© <!-- -->2025<!-- -->, Built with<!-- --> <a href="https://www.gatsbyjs.com">Gatsby</a></footer></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/3d-reconstruction-basic/";/*]]>*/</script><!-- slice-start id="_gatsby-scripts-1" -->
           <script
             id="gatsby-chunk-mapping"
           >
             window.___chunkMapping="{\"app\":[\"/app-3f04a5d89e4af8192d0d.js\"],\"component---src-pages-404-js\":[\"/component---src-pages-404-js-b1165d7707586a1f28fb.js\"],\"component---src-pages-categories-js\":[\"/component---src-pages-categories-js-cd0b4f2600888fb3b82f.js\"],\"component---src-pages-index-js\":[\"/component---src-pages-index-js-69ffa5174bcc9ee3693e.js\"],\"component---src-pages-using-typescript-tsx\":[\"/component---src-pages-using-typescript-tsx-a87eff1da7009881b1e1.js\"],\"component---src-templates-blog-post-js\":[\"/component---src-templates-blog-post-js-7711d3f4126b1b3cb49c.js\"]}";
           </script>
-        <script>window.___webpackCompilationHash="cafcbe4413bfb9f7fe1e";</script><script src="/webpack-runtime-aa4a747c9edd16b3106c.js" async></script><script src="/framework-5585feef2812a02482ac.js" async></script><script src="/app-3f04a5d89e4af8192d0d.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>
+        <script>window.___webpackCompilationHash="614a3c8adc37e46e0b95";</script><script src="/webpack-runtime-2cd49e56469f41ea99ab.js" async></script><script src="/framework-5585feef2812a02482ac.js" async></script><script src="/app-3f04a5d89e4af8192d0d.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>

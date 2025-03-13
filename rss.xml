@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[A blog about computer science, mathematics, and life.]]></description><link>https://zhexulong.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Thu, 13 Mar 2025 12:38:40 GMT</lastBuildDate><item><title><![CDATA[多模态多传感器融合]]></title><description><![CDATA[Transformer-based model演进史 transformer position解释 前融合 PointPainting(2021)  将 RGB 图像通过语义分割网络生成像素的语义得分向量 将 LiDAR…]]></description><link>https://zhexulong.github.io/multi-sensor-fusion/</link><guid isPermaLink="false">https://zhexulong.github.io/multi-sensor-fusion/</guid><pubDate>Wed, 19 Feb 2025 23:33:00 GMT</pubDate><content:encoded>&lt;h1&gt;Transformer-based model演进史&lt;/h1&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[A blog about computer science, mathematics, and life.]]></description><link>https://zhexulong.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Thu, 13 Mar 2025 12:54:13 GMT</lastBuildDate><item><title><![CDATA[多模态多传感器融合]]></title><description><![CDATA[Transformer-based model演进史 transformer position解释 前融合 PointPainting(2021)  将 RGB 图像通过语义分割网络生成像素的语义得分向量 将 LiDAR…]]></description><link>https://zhexulong.github.io/multi-sensor-fusion/</link><guid isPermaLink="false">https://zhexulong.github.io/multi-sensor-fusion/</guid><pubDate>Wed, 19 Feb 2025 23:33:00 GMT</pubDate><content:encoded>&lt;h1&gt;Transformer-based model演进史&lt;/h1&gt;
 &lt;p&gt;&lt;a href=&quot;https://kexue.fm/archives/8231/comment-page-1#mjx-eqn-eq%3Asin&quot;&gt;transformer position解释&lt;/a&gt;&lt;/p&gt;
 &lt;h1&gt;前融合&lt;/h1&gt;
 &lt;p&gt;PointPainting(2021)&lt;/p&gt;
@@ -494,7 +494,20 @@
                         &lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;
                     &lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
                     label_idx &lt;span class=&quot;token operator&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id=&quot;sfM流程&quot; style=&quot;position:relative;&quot;&gt;sfM流程&lt;a href=&quot;#sfM%E6%B5%81%E7%A8%8B&quot; aria-label=&quot;sfM流程 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;描述子: 是一种用于描述图像特征的向量,可以用于特征匹配&lt;/li&gt;
+&lt;li&gt;常用描述子: SIFT, SURF, ORB等&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;流程:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;特征提取: 提取图像中的特征点&lt;/li&gt;
+&lt;li&gt;特征匹配: 通过描述子匹配,找到两幅图像中的对应点&lt;/li&gt;
+&lt;li&gt;求解本质矩阵: 通过对应点,求解本质矩阵&lt;/li&gt;
+&lt;li&gt;三角测量: 通过本质矩阵,求解三维点坐标&lt;/li&gt;
+&lt;/ol&gt;
 &lt;h2 id=&quot;orb-slam&quot; style=&quot;position:relative;&quot;&gt;orb-slam&lt;a href=&quot;#orb-slam&quot; aria-label=&quot;orb slam permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;使用orb描述子&lt;/p&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
       style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; &quot;
@@ -528,10 +541,56 @@
   &lt;/a&gt;
     &lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;闭环检测: 判断是否是同一张图(通过描述子匹配,orb-slam中使用了词袋模型)&lt;/p&gt;
-&lt;h2 id=&quot;3DGS流程&quot; style=&quot;position:relative;&quot;&gt;3DGS流程&lt;a href=&quot;#3DGS%E6%B5%81%E7%A8%8B&quot; aria-label=&quot;3DGS流程 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&quot;3DGS3d-gaussian-splatting流程&quot; style=&quot;position:relative;&quot;&gt;3DGS(3d gaussian splatting)流程&lt;a href=&quot;#3DGS3d-gaussian-splatting%E6%B5%81%E7%A8%8B&quot; aria-label=&quot;3DGS3d gaussian splatting流程 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;3d gaussian: 三维高斯球&lt;/li&gt;
+&lt;li&gt;Splatting: 将3d投影到图像平面&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/0cf713227c171f5ea915e21cc6abe253/07a9c/3dgs-pipeline.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 20.253164556962027%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAECAIAAAABPYjBAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAsElEQVR42mWOSw6CMBRF2f9G3IELMM6dSQQk/Foo1PLa1/ZREZXghMQzvrnnRJ8/vPMGtEWU8tGJnvN2BHgty37z3ohCCEQ0zzNv24Zxcr6R4hxfHIUH6E6IhrFRGzC2KMo0u/f9YK3zG5FzDhGnaSrLKstz1Fh0zeF0NNaSJ8Z4Vdca16s5u+fXa8xagT7ARvT72CcRTUbrZwirIUmzW5JKpdY0pRSMsJrQ0yAlAHwBLH3hfxNt5IgAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;img.png&quot;
+        title=&quot;&quot;
+        src=&quot;/static/0cf713227c171f5ea915e21cc6abe253/f058b/3dgs-pipeline.png&quot;
+        srcset=&quot;/static/0cf713227c171f5ea915e21cc6abe253/c26ae/3dgs-pipeline.png 158w,
+/static/0cf713227c171f5ea915e21cc6abe253/6bdcf/3dgs-pipeline.png 315w,
+/static/0cf713227c171f5ea915e21cc6abe253/f058b/3dgs-pipeline.png 630w,
+/static/0cf713227c171f5ea915e21cc6abe253/40601/3dgs-pipeline.png 945w,
+/static/0cf713227c171f5ea915e21cc6abe253/78612/3dgs-pipeline.png 1260w,
+/static/0cf713227c171f5ea915e21cc6abe253/07a9c/3dgs-pipeline.png 1440w&quot;
+        sizes=&quot;(max-width: 630px) 100vw, 630px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;通过sfM获得初始3d点&lt;/li&gt;
+&lt;li&gt;将三维投影到2d image与原image做loss,通过优化得到更好的3d点&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://zhuanlan.zhihu.com/p/680669616&quot;&gt;点密集化+点剪枝&lt;/a&gt;(Adaptive Density Control过程)&lt;/li&gt;
+&lt;/ol&gt;
 &lt;h2 id=&quot;参考&quot; style=&quot;position:relative;&quot;&gt;参考&lt;a href=&quot;#%E5%8F%82%E8%80%83&quot; aria-label=&quot;参考 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&quot;https://cv-xueba.club/pages/courses/cv_sfm.html&quot;&gt;视觉重建ppt&lt;/a&gt;
-&lt;a href=&quot;https://arxiv.org/html/2401.12202v2&quot;&gt;ok-robot论文&lt;/a&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[fpga intra-clock时序分析]]></title><description><![CDATA[时序分析工具 report_design_analysis/report timing summary查看时序分析报告,分析logic level, logic delay, net delay(route delay), fanout等信息。Clock Skew…]]></description><link>https://zhexulong.github.io/fpga-timing-intra/</link><guid isPermaLink="false">https://zhexulong.github.io/fpga-timing-intra/</guid><pubDate>Thu, 03 Oct 2024 14:58:00 GMT</pubDate><content:encoded>&lt;h2 id=&quot;时序分析工具&quot; style=&quot;position:relative;&quot;&gt;时序分析工具&lt;a href=&quot;#%E6%97%B6%E5%BA%8F%E5%88%86%E6%9E%90%E5%B7%A5%E5%85%B7&quot; aria-label=&quot;时序分析工具 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://cv-xueba.club/pages/courses/cv_sfm.html&quot;&gt;视觉重建ppt&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://arxiv.org/html/2401.12202v2&quot;&gt;ok-robot论文&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://zhuanlan.zhihu.com/p/680669616&quot;&gt;点密集化+点剪枝&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/graphdeco-inria/gaussian-splatting&quot;&gt;3dgs github&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[fpga intra-clock时序分析]]></title><description><![CDATA[时序分析工具 report_design_analysis/report timing summary查看时序分析报告,分析logic level, logic delay, net delay(route delay), fanout等信息。Clock Skew…]]></description><link>https://zhexulong.github.io/fpga-timing-intra/</link><guid isPermaLink="false">https://zhexulong.github.io/fpga-timing-intra/</guid><pubDate>Thu, 03 Oct 2024 14:58:00 GMT</pubDate><content:encoded>&lt;h2 id=&quot;时序分析工具&quot; style=&quot;position:relative;&quot;&gt;时序分析工具&lt;a href=&quot;#%E6%97%B6%E5%BA%8F%E5%88%86%E6%9E%90%E5%B7%A5%E5%85%B7&quot; aria-label=&quot;时序分析工具 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;report_design_analysis/report timing summary查看时序分析报告,分析logic level, logic delay, net delay(route delay), fanout等信息。Clock Skew，当其绝对值超过 500ps 时，应引起关注。Clock Uncertainty，当该数值超过 100ps 时，应引起关注。&lt;a href=&quot;https://www.sunev.cn/embedded/1277.html&quot;&gt;来源&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;通过report_qor_suggestions生成结果质量 (QoR) 评估报告 (Report Quality of Results (QoR) Assessment)将逻辑层次检查、利用率检查和最常用的时钟拓扑结构检查组合到单一汇总报告中，以便为您提供总体设计评估。此报告可帮助您了解时序收敛问题的严重性。&lt;a href=&quot;https://docs.amd.com/r/2021.1-%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87/ug949-vivado-design-methodology/%E5%A4%8D%E6%9F%A5%E7%BB%BC%E5%90%88%E6%97%A5%E5%BF%97&quot;&gt;来源&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&quot;什么造成了时序分析失败&quot; style=&quot;position:relative;&quot;&gt;什么造成了时序分析失败?&lt;a href=&quot;#%E4%BB%80%E4%B9%88%E9%80%A0%E6%88%90%E4%BA%86%E6%97%B6%E5%BA%8F%E5%88%86%E6%9E%90%E5%A4%B1%E8%B4%A5&quot; aria-label=&quot;什么造成了时序分析失败 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
