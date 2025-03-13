@@ -1,4 +1,165 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[A blog about computer science, mathematics, and life.]]></description><link>https://zhexulong.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Tue, 07 Jan 2025 20:13:14 GMT</lastBuildDate><item><title><![CDATA[三维重建基础]]></title><description><![CDATA[单目相机模型 小孔成像模型 齐次坐标表示: 将三维点用四维向量表示,可以用来表示无穷远点等 如:,  其中,  从影消点到内参矩阵 对于一个直线l,方向为d,无穷远点 无穷远点映射到影消点,因而影消点 K为相机内参矩阵 因此可以通过图片中影消点的坐标求出出相机的内参矩阵K…]]></description><link>https://zhexulong.github.io/3d-reconstruction-basic/</link><guid isPermaLink="false">https://zhexulong.github.io/3d-reconstruction-basic/</guid><pubDate>Tue, 07 Jan 2025 20:06:00 GMT</pubDate><content:encoded>&lt;h2 id=&quot;单目相机模型&quot; style=&quot;position:relative;&quot;&gt;单目相机模型&lt;a href=&quot;#%E5%8D%95%E7%9B%AE%E7%9B%B8%E6%9C%BA%E6%A8%A1%E5%9E%8B&quot; aria-label=&quot;单目相机模型 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[A blog about computer science, mathematics, and life.]]></description><link>https://zhexulong.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Thu, 13 Mar 2025 12:38:40 GMT</lastBuildDate><item><title><![CDATA[多模态多传感器融合]]></title><description><![CDATA[Transformer-based model演进史 transformer position解释 前融合 PointPainting(2021)  将 RGB 图像通过语义分割网络生成像素的语义得分向量 将 LiDAR…]]></description><link>https://zhexulong.github.io/multi-sensor-fusion/</link><guid isPermaLink="false">https://zhexulong.github.io/multi-sensor-fusion/</guid><pubDate>Wed, 19 Feb 2025 23:33:00 GMT</pubDate><content:encoded>&lt;h1&gt;Transformer-based model演进史&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&quot;https://kexue.fm/archives/8231/comment-page-1#mjx-eqn-eq%3Asin&quot;&gt;transformer position解释&lt;/a&gt;&lt;/p&gt;
+&lt;h1&gt;前融合&lt;/h1&gt;
+&lt;p&gt;PointPainting(2021)&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/1e24882dd0492a71ec4767711a9fabe7/a7a19/PointPainting.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 35.44303797468354%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAHCAIAAACHqfpvAAAACXBIWXMAAAsTAAALEwEAmpwYAAABtklEQVR42gGrAVT+AMLCwo2NjZeXl5eXl4+Pj7y8vP///8fGxpSUk5ycnp6dnZaWlr+/vv///7q6uo+OjpmZlpmZl4+Oj8bFxQCAgIAVFRUnJycqKioaGhppaWn4+Ph4e38SFhk0LiQuLCobHB5kZmju7e1na28YGRlHNh8xLSoTFhiFh4kAmJiYREREQ0RERUZGODk5fHt66u3xsJuBX0ovZ1A4Wj9COjYyg3lu3N/jrZJwY04xcVI2Xz5EOTYvp5yOAK+vrnl5eJGRkJGOjZCLibu5uP///8W2o4d4ZoCBg4aAhJaKfcaymO/z97yrlYyAcI+PkpWLj56NetzHrQD6/P3z9PXh4uXp/f7l/P7y+P3////u9f3Y3+fQ0tLN1Nbm6Ory9vv////3/P/w8vPh5ejp///l/P7z+v8AsbW0hIyMjImLgZGQaYSHlJqY6uvu1sCssJ2MrKmkvZuPp52YzsS6////rrCtio+NjIaHi5aSZ4CAq7CtAKmpqn98ebGsprmtpK2gl6Gio/L3++3LrdGwksK9t8+spsCzrvLKpf///6Cfn4aCfLSrpMOsoKiaj7a0sYAFAl/a2JNYAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;PointPainting&quot;
+        title=&quot;&quot;
+        src=&quot;/static/1e24882dd0492a71ec4767711a9fabe7/f058b/PointPainting.png&quot;
+        srcset=&quot;/static/1e24882dd0492a71ec4767711a9fabe7/c26ae/PointPainting.png 158w,
+/static/1e24882dd0492a71ec4767711a9fabe7/6bdcf/PointPainting.png 315w,
+/static/1e24882dd0492a71ec4767711a9fabe7/f058b/PointPainting.png 630w,
+/static/1e24882dd0492a71ec4767711a9fabe7/40601/PointPainting.png 945w,
+/static/1e24882dd0492a71ec4767711a9fabe7/78612/PointPainting.png 1260w,
+/static/1e24882dd0492a71ec4767711a9fabe7/a7a19/PointPainting.png 1323w&quot;
+        sizes=&quot;(max-width: 630px) 100vw, 630px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;将 RGB 图像通过语义分割网络生成像素的语义得分向量&lt;/li&gt;
+&lt;li&gt;将 LiDAR 点云投影至图像平面,为每个点云赋予对应像素的语义得分向量&lt;/li&gt;
+&lt;li&gt;将带有融合语义的点云通过(在特征提取层增加通道维度处理语义特征的)PointPillars/VoxelNet等点云检测检测网络得到3D边界框&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&quot;&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#&quot; aria-label=&quot; permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;未作语义分割,直接将rgb图像concat到点云上并不有效,可能和rgb图像提供的信息并不那么有效
+&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/2fc528353a77166ed9df4991f06161b7/111fd/fusion-method.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 16.455696202531648%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAADCAIAAAAcOLh5AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAj0lEQVR42k2Lyw7DIAwE8/+/11zIiwZKAANxBFhqVNLUx64v3tVMhztKKY0x8zQrpZZFPvkW3uRLaUyRiHi31nrvASDGmFJCxNZaR5W4MsEOP8558GCt28zmN8gOGR3EIIRY17WUwk77tKtd9/fuzveZc65EIQStdf/op3Eah5Gd46ilnLXWHXdOgMDk/ZcfmB+lzPkC9JAAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;fusion-method&quot;
+        title=&quot;&quot;
+        src=&quot;/static/2fc528353a77166ed9df4991f06161b7/f058b/fusion-method.png&quot;
+        srcset=&quot;/static/2fc528353a77166ed9df4991f06161b7/c26ae/fusion-method.png 158w,
+/static/2fc528353a77166ed9df4991f06161b7/6bdcf/fusion-method.png 315w,
+/static/2fc528353a77166ed9df4991f06161b7/f058b/fusion-method.png 630w,
+/static/2fc528353a77166ed9df4991f06161b7/40601/fusion-method.png 945w,
+/static/2fc528353a77166ed9df4991f06161b7/78612/fusion-method.png 1260w,
+/static/2fc528353a77166ed9df4991f06161b7/111fd/fusion-method.png 1831w&quot;
+        sizes=&quot;(max-width: 630px) 100vw, 630px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;h2 id=&quot;解决模态之间时间同步问题&quot; style=&quot;position:relative;&quot;&gt;解决模态之间时间同步问题&lt;a href=&quot;#%E8%A7%A3%E5%86%B3%E6%A8%A1%E6%80%81%E4%B9%8B%E9%97%B4%E6%97%B6%E9%97%B4%E5%90%8C%E6%AD%A5%E9%97%AE%E9%A2%98&quot; aria-label=&quot;解决模态之间时间同步问题 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/d3ea3b92547025abca2b33871c8ac972/f43e4/Multimodal-time-synchronization.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 72.15189873417721%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAOCAIAAACgpqunAAAACXBIWXMAAAsTAAALEwEAmpwYAAACL0lEQVR42j1S2W7bQAzU/39S+xAUKVCgQIBctrTa+9ZhyTrtJLbsjpykC2lBDDmcIbHJ9Xqdp7mud03TNk1TFGVVVdM4Ab9cLrhTU/54yO+e2N0jv3ukPx/In61ebqkE//F4BLmqcO1AjjH2ff+fzELz64ndv/Dfr+L+Gfz8b6qWZVnJ59PJGFtWIO6U1tZazhn4QJBGkXduV1d91zqrvTVGyboq67pG61X5dDqdz+eu67z3xpiiKFbwfL7eDlKH4xG9rHM+xLf398sN/LKNUQ+HQ9u2+vt8fHxcvw/w+XDAUJQxSqlz7u3t/TOVXC5LlmZK6XEc4RylIYR5nj/T8EYyIpWepglZuPU+IP4iD+Ngg2v2+3bfwlhZYd1lgY3vqlBGY3UoCiTLunQxhOiB4/PBD9OY9EP/snkWWkmtcpqnWcoFT0lqnCGUbNKNjxGLpJxyKShnQnGppNASxKTvO0SxLLjkQgpj7Wfaequ01FiuhnhUZkW0NdpoHz1Xouu7pOv3VFA4Bwpx+MxZDh2hJOUcMWQZ5z4GrrjSShntvJWr8gDb3ZZsCc1BgysmOJeMMMKVRAWq0QUgvEijmWDQBB/DD+OYdEMHw5BVVksjXfSrGrwVQUjOJAfO1wAchffzsn3lWsQidlDed3vCcsyT327sKUelkrc5lVSCQg1eKGbJt1kKLzmjJM/GeVrJWLULHnVbkoEGvll7UcQuOIinJLPWQKMoC7wwvIJpnpZl+Qf0uvbTlWvi0wAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;Multimodal time synchronization.png&quot;
+        title=&quot;&quot;
+        src=&quot;/static/d3ea3b92547025abca2b33871c8ac972/f058b/Multimodal-time-synchronization.png&quot;
+        srcset=&quot;/static/d3ea3b92547025abca2b33871c8ac972/c26ae/Multimodal-time-synchronization.png 158w,
+/static/d3ea3b92547025abca2b33871c8ac972/6bdcf/Multimodal-time-synchronization.png 315w,
+/static/d3ea3b92547025abca2b33871c8ac972/f058b/Multimodal-time-synchronization.png 630w,
+/static/d3ea3b92547025abca2b33871c8ac972/40601/Multimodal-time-synchronization.png 945w,
+/static/d3ea3b92547025abca2b33871c8ac972/f43e4/Multimodal-time-synchronization.png 1120w&quot;
+        sizes=&quot;(max-width: 630px) 100vw, 630px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;h2 id=&quot;MVP&quot; style=&quot;position:relative;&quot;&gt;MVP&lt;a href=&quot;#MVP&quot; aria-label=&quot;MVP permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;通过2D检测结果生成虚拟点云，补充LiDAR稀疏区域的点（如远距离目标），平衡不同距离目标的点云密度。&lt;/p&gt;
+&lt;h1&gt;特征融合&lt;/h1&gt;
+&lt;h2 id=&quot;BEVFusion&quot; style=&quot;position:relative;&quot;&gt;BEVFusion&lt;a href=&quot;#BEVFusion&quot; aria-label=&quot;BEVFusion permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;提出Is LiDAR space the right place to perform sensor fusion?&lt;/p&gt;
+&lt;h2 id=&quot;带有transformer的特征融合&quot; style=&quot;position:relative;&quot;&gt;带有transformer的特征融合&lt;a href=&quot;#%E5%B8%A6%E6%9C%89transformer%E7%9A%84%E7%89%B9%E5%BE%81%E8%9E%8D%E5%90%88&quot; aria-label=&quot;带有transformer的特征融合 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;先pre-training,再fine-tuning(BERT,ViT)&lt;/p&gt;
+&lt;p&gt;attention:key-value-query, 最后输出体现query意图,在key-value对中查询相关信息得到最后输出&lt;/p&gt;
+&lt;h1&gt;transfusion&lt;/h1&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/9fe748adc30df66f3dbcb57926f1b67c/c549b/transfusion.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 39.24050632911392%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAICAIAAAB2/0i6AAAACXBIWXMAAAsTAAALEwEAmpwYAAABrUlEQVR42hXPyXLTMACAYb8hJ7iwnHour0AfghkYZgrDDXgAGG5NSJcsdmLZsiTLsiXF8iIvtZPYKSE16cx//Q6/UdbNZtedIjSAiHKRrJA0bQoAWkJuQe6QtQUCB8uAySSr0ix3PYyI70JidPv9pus9KNuuSzNNEUSYQIh9D/o+WQIsIxGxIFsL7pOiavaHv5ZJVaJ1VRrbvm82nW2xatvpssKOM1ssLcs+YXMFLEA4l5QGSkiGUV7U/44HAnmim/vtzuj6fhiGw+Pj4XhMsyJkYjz1LCckODRdcQrz2saJx3IWcF01w3Dc9l272+qyNpI0V0mqVDqbzziPozCmkcYecWwYhZLKhogaYIVZ7hNWPOGhrGu5ltSnxqfLL+fnb99dXLz/8PFqNGEY39xOzRUyYWyTeA7CwPcXszsR+BFBma67hwfLDIuirdvW+Pbj+/MXz87OXr5+8+ry89dcqVsT3S19GJZENF5U8kg6wBFhyBDKy6dndxlIVRYnrFJ9NR6N/ox+/vo9NwHnChAFcOzSBNLEC7KbhTeZguuZO57MmVDVfaOrOtFVnOT/AewxmvqyTgeUAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;transfusion&quot;
+        title=&quot;&quot;
+        src=&quot;/static/9fe748adc30df66f3dbcb57926f1b67c/f058b/transfusion.png&quot;
+        srcset=&quot;/static/9fe748adc30df66f3dbcb57926f1b67c/c26ae/transfusion.png 158w,
+/static/9fe748adc30df66f3dbcb57926f1b67c/6bdcf/transfusion.png 315w,
+/static/9fe748adc30df66f3dbcb57926f1b67c/f058b/transfusion.png 630w,
+/static/9fe748adc30df66f3dbcb57926f1b67c/40601/transfusion.png 945w,
+/static/9fe748adc30df66f3dbcb57926f1b67c/78612/transfusion.png 1260w,
+/static/9fe748adc30df66f3dbcb57926f1b67c/c549b/transfusion.png 2128w&quot;
+        sizes=&quot;(max-width: 630px) 100vw, 630px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;img_feature和flaaten lidar做一次attention,再根据角度和对应角度的img_feature做一次attention,然后选取其中距离在所需范围内的物体&lt;/p&gt;
+&lt;p&gt;跨模态attention后面在bevfusion4D中也有用到&lt;/p&gt;
+&lt;h2 id=&quot;fade-strategy&quot; style=&quot;position:relative;&quot;&gt;fade strategy&lt;a href=&quot;#fade-strategy&quot; aria-label=&quot;fade strategy permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;For the fade strategy proposed by PointAugmenting(disenable the copy-and-paste augmentation for the last 5 epochs), we currently implement this strategy by manually stop training at 15 epoch and resume the training without copy-and-paste augmentation. If you find more elegant ways to implement such strategy, please let we know and we really appreciate it. The fade strategy reduces lots of false positive, improving the mAP remarkably especially for TransFusion-L while having less influence on TransFusion.
+&lt;a href=&quot;https://github.com/XuyangBai/TransFusion/blob/master/configs/nuscenes.md&quot;&gt;https://github.com/XuyangBai/TransFusion/blob/master/configs/nuscenes.md&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;就是在训练的最后几个epoch不使用copy-and-paste augmentation,这样可以学习到现实中的分布,减少false positive&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/XuyangBai/TransFusion/blob/master/configs/nuscenes.md&quot;&gt;https://github.com/XuyangBai/TransFusion/blob/master/configs/nuscenes.md&lt;/a&gt; 有很多值得读的trick&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://zhouyifan.net/2022/11/12/20220925-Transformer/&quot;&gt;transformer参考&lt;/a&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[三维重建:从基础到3dgs]]></title><description><![CDATA[单目相机模型 小孔成像模型 齐次坐标表示: 将三维点用四维向量表示,可以用来表示无穷远点等 如:,  其中,  从影消点到内参矩阵 对于一个直线l,方向为d,无穷远点 无穷远点映射到影消点,因而影消点 K为相机内参矩阵 因此可以通过图片中影消点的坐标求出出相机的内参矩阵K…]]></description><link>https://zhexulong.github.io/3d-reconstruction-basic/</link><guid isPermaLink="false">https://zhexulong.github.io/3d-reconstruction-basic/</guid><pubDate>Tue, 07 Jan 2025 20:06:00 GMT</pubDate><content:encoded>&lt;h2 id=&quot;单目相机模型&quot; style=&quot;position:relative;&quot;&gt;单目相机模型&lt;a href=&quot;#%E5%8D%95%E7%9B%AE%E7%9B%B8%E6%9C%BA%E6%A8%A1%E5%9E%8B&quot; aria-label=&quot;单目相机模型 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
 &lt;h3 id=&quot;小孔成像模型&quot; style=&quot;position:relative;&quot;&gt;小孔成像模型&lt;a href=&quot;#%E5%B0%8F%E5%AD%94%E6%88%90%E5%83%8F%E6%A8%A1%E5%9E%8B&quot; aria-label=&quot;小孔成像模型 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;齐次坐标表示: 将三维点用四维向量表示,可以用来表示无穷远点等&lt;/p&gt;
 &lt;p&gt;如:&lt;span class=&quot;math math-inline&quot;&gt;&lt;span class=&quot;katex&quot;&gt;&lt;span class=&quot;katex-mathml&quot;&gt;&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;P&lt;/mi&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mo stretchy=&quot;false&quot;&gt;(&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo separator=&quot;true&quot;&gt;,&lt;/mo&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;mo separator=&quot;true&quot;&gt;,&lt;/mo&gt;&lt;mi&gt;z&lt;/mi&gt;&lt;mo stretchy=&quot;false&quot;&gt;)&lt;/mo&gt;&lt;mo&gt;→&lt;/mo&gt;&lt;msup&gt;&lt;mi&gt;P&lt;/mi&gt;&lt;mo mathvariant=&quot;normal&quot; lspace=&quot;0em&quot; rspace=&quot;0em&quot;&gt;′&lt;/mo&gt;&lt;/msup&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mo stretchy=&quot;false&quot;&gt;(&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo separator=&quot;true&quot;&gt;,&lt;/mo&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;mo separator=&quot;true&quot;&gt;,&lt;/mo&gt;&lt;mi&gt;z&lt;/mi&gt;&lt;mo separator=&quot;true&quot;&gt;,&lt;/mo&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;mo stretchy=&quot;false&quot;&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;P = (x, y, z) \rightarrow P&apos; = (x, y, z, 1)&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&quot;katex-html&quot; aria-hidden=&quot;true&quot;&gt;&lt;span class=&quot;base&quot;&gt;&lt;span class=&quot;strut&quot; style=&quot;height:0.6833em;&quot;&gt;&lt;/span&gt;&lt;span class=&quot;mord mathnormal&quot; style=&quot;margin-right:0.13889em;&quot;&gt;P&lt;/span&gt;&lt;span class=&quot;mspace&quot; style=&quot;margin-right:0.2778em;&quot;&gt;&lt;/span&gt;&lt;span class=&quot;mrel&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mspace&quot; style=&quot;margin-right:0.2778em;&quot;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;base&quot;&gt;&lt;span class=&quot;strut&quot; style=&quot;height:1em;vertical-align:-0.25em;&quot;&gt;&lt;/span&gt;&lt;span class=&quot;mopen&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mord mathnormal&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;mpunct&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mspace&quot; style=&quot;margin-right:0.1667em;&quot;&gt;&lt;/span&gt;&lt;span class=&quot;mord mathnormal&quot; style=&quot;margin-right:0.03588em;&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;mpunct&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mspace&quot; style=&quot;margin-right:0.1667em;&quot;&gt;&lt;/span&gt;&lt;span class=&quot;mord mathnormal&quot; style=&quot;margin-right:0.04398em;&quot;&gt;z&lt;/span&gt;&lt;span class=&quot;mclose&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;mspace&quot; style=&quot;margin-right:0.2778em;&quot;&gt;&lt;/span&gt;&lt;span class=&quot;mrel&quot;&gt;→&lt;/span&gt;&lt;span class=&quot;mspace&quot; style=&quot;margin-right:0.2778em;&quot;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;base&quot;&gt;&lt;span class=&quot;strut&quot; style=&quot;height:0.7519em;&quot;&gt;&lt;/span&gt;&lt;span class=&quot;mord&quot;&gt;&lt;span class=&quot;mord mathnormal&quot; style=&quot;margin-right:0.13889em;&quot;&gt;P&lt;/span&gt;&lt;span class=&quot;msupsub&quot;&gt;&lt;span class=&quot;vlist-t&quot;&gt;&lt;span class=&quot;vlist-r&quot;&gt;&lt;span class=&quot;vlist&quot; style=&quot;height:0.7519em;&quot;&gt;&lt;span style=&quot;top:-3.063em;margin-right:0.05em;&quot;&gt;&lt;span class=&quot;pstrut&quot; style=&quot;height:2.7em;&quot;&gt;&lt;/span&gt;&lt;span class=&quot;sizing reset-size6 size3 mtight&quot;&gt;&lt;span class=&quot;mord mtight&quot;&gt;&lt;span class=&quot;mord mtight&quot;&gt;′&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;mspace&quot; style=&quot;margin-right:0.2778em;&quot;&gt;&lt;/span&gt;&lt;span class=&quot;mrel&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mspace&quot; style=&quot;margin-right:0.2778em;&quot;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;base&quot;&gt;&lt;span class=&quot;strut&quot; style=&quot;height:1em;vertical-align:-0.25em;&quot;&gt;&lt;/span&gt;&lt;span class=&quot;mopen&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mord mathnormal&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;mpunct&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mspace&quot; style=&quot;margin-right:0.1667em;&quot;&gt;&lt;/span&gt;&lt;span class=&quot;mord mathnormal&quot; style=&quot;margin-right:0.03588em;&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;mpunct&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mspace&quot; style=&quot;margin-right:0.1667em;&quot;&gt;&lt;/span&gt;&lt;span class=&quot;mord mathnormal&quot; style=&quot;margin-right:0.04398em;&quot;&gt;z&lt;/span&gt;&lt;span class=&quot;mpunct&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mspace&quot; style=&quot;margin-right:0.1667em;&quot;&gt;&lt;/span&gt;&lt;span class=&quot;mord&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;mclose&quot;&gt;)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;,&lt;/p&gt;
@@ -333,6 +494,41 @@
                         &lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;
                     &lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
                     label_idx &lt;span class=&quot;token operator&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id=&quot;orb-slam&quot; style=&quot;position:relative;&quot;&gt;orb-slam&lt;a href=&quot;#orb-slam&quot; aria-label=&quot;orb slam permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/1fe61d42e3d49c47bb29af088ac0d85c/2cffa/framework.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 70.25316455696203%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAOCAIAAACgpqunAAAACXBIWXMAAAsTAAALEwEAmpwYAAACl0lEQVR42k1S227iMBDt9+77fsI+7AestFLfK6QCrVoICALhlhA794QESiiFkEBCLkAh3BLIuoDUtcYz8thn5vjYd8n5nCTJNgwZAEEb1Ina1LScqWNbU2Nk2FN7GSyReY67CpbIAtc/HA7JZdwNDJtSPyRRBVRbEhRIwXwey73ksulMq0l2ZbWjKLIoSZzIQpbnOIHlvbmHkOfz+W4y8/m+MdA/RIbhAadrwzcNlaBBvTHu94fdXofjmDboKhrCk42WJquIyA38FS4cgnUysM7yIBo7J7SsKzoh6dZy9+6H4f6IMl19nC42GLl/RX7RvgZnZitKb2YHu/3pcDzto9MPyvvT7OYZ7ReYKosoiQ4QcJVqg4W8aZq3O1/BVaZyn7l/Kmewet6amSj1E3hZYSi9jf4Ktr4+RZsNXijVazXQomRJTi7dv2hHcZSFmUITe8aeoAKHpo6Sv1nngezgUH4QDHN7OoabZrVRI+oCwyv/g1HzDPmYKqReSi/lJj51zOicvPbcMqNgNbLdM9xtfAjDOk4UMIxpQwYwN9poxnGMc6X062MqnaIhHXjuPk5KPYegmEK5qryNVvt4s1qR9RYEgKWhIIjfYDTclTtxJ/PAWa6W5zg+xid25GvvRkfrj0bWdnfYfH62iEatQkAShOvN7amOx6M3d8cfY+NjPBlNfC8IvACJ3+v2dP3dsecLf4GOrlefPM2wgBEAH27CGxghizksn8uDVpsmKZqkiXKFqFSRPNUyXsSKeBH3fR+Vo5pkpYKLvPTdeRksanj1OfvE0azICbANBIZTlY4qdiReQB+TblGWZTm2LUAe7apS57DfX9S+3Nmdu7IoaqomCiIyVHi33W3Wa+T32x3yV12uP+Lqr4L9A0M72ftqhkQwAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;framework&quot;
+        title=&quot;&quot;
+        src=&quot;/static/1fe61d42e3d49c47bb29af088ac0d85c/f058b/framework.png&quot;
+        srcset=&quot;/static/1fe61d42e3d49c47bb29af088ac0d85c/c26ae/framework.png 158w,
+/static/1fe61d42e3d49c47bb29af088ac0d85c/6bdcf/framework.png 315w,
+/static/1fe61d42e3d49c47bb29af088ac0d85c/f058b/framework.png 630w,
+/static/1fe61d42e3d49c47bb29af088ac0d85c/40601/framework.png 945w,
+/static/1fe61d42e3d49c47bb29af088ac0d85c/2cffa/framework.png 1092w&quot;
+        sizes=&quot;(max-width: 630px) 100vw, 630px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;闭环检测: 判断是否是同一张图(通过描述子匹配,orb-slam中使用了词袋模型)&lt;/p&gt;
+&lt;h2 id=&quot;3DGS流程&quot; style=&quot;position:relative;&quot;&gt;3DGS流程&lt;a href=&quot;#3DGS%E6%B5%81%E7%A8%8B&quot; aria-label=&quot;3DGS流程 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
 &lt;h2 id=&quot;参考&quot; style=&quot;position:relative;&quot;&gt;参考&lt;a href=&quot;#%E5%8F%82%E8%80%83&quot; aria-label=&quot;参考 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;&lt;a href=&quot;https://cv-xueba.club/pages/courses/cv_sfm.html&quot;&gt;视觉重建ppt&lt;/a&gt;
 &lt;a href=&quot;https://arxiv.org/html/2401.12202v2&quot;&gt;ok-robot论文&lt;/a&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[fpga intra-clock时序分析]]></title><description><![CDATA[时序分析工具 report_design_analysis/report timing summary查看时序分析报告,分析logic level, logic delay, net delay(route delay), fanout等信息。Clock Skew…]]></description><link>https://zhexulong.github.io/fpga-timing-intra/</link><guid isPermaLink="false">https://zhexulong.github.io/fpga-timing-intra/</guid><pubDate>Thu, 03 Oct 2024 14:58:00 GMT</pubDate><content:encoded>&lt;h2 id=&quot;时序分析工具&quot; style=&quot;position:relative;&quot;&gt;时序分析工具&lt;a href=&quot;#%E6%97%B6%E5%BA%8F%E5%88%86%E6%9E%90%E5%B7%A5%E5%85%B7&quot; aria-label=&quot;时序分析工具 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
