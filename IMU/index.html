@@ -50,7 +50,33 @@
       }
     })
   </script><link rel="alternate" type="application/rss+xml" title="Gatsby Starter Blog RSS Feed" href="/rss.xml"/><link rel="icon" href="/favicon-32x32.png?v=b13cd1e61183d9ec1669ea65c80a80f9" type="image/png"/><link rel="manifest" href="/manifest.webmanifest" crossorigin="anonymous"/><link rel="apple-touch-icon" sizes="48x48" href="/icons/icon-48x48.png?v=b13cd1e61183d9ec1669ea65c80a80f9"/><link rel="apple-touch-icon" sizes="72x72" href="/icons/icon-72x72.png?v=b13cd1e61183d9ec1669ea65c80a80f9"/><link rel="apple-touch-icon" sizes="96x96" href="/icons/icon-96x96.png?v=b13cd1e61183d9ec1669ea65c80a80f9"/><link rel="apple-touch-icon" sizes="144x144" href="/icons/icon-144x144.png?v=b13cd1e61183d9ec1669ea65c80a80f9"/><link rel="apple-touch-icon" sizes="192x192" href="/icons/icon-192x192.png?v=b13cd1e61183d9ec1669ea65c80a80f9"/><link rel="apple-touch-icon" sizes="256x256" href="/icons/icon-256x256.png?v=b13cd1e61183d9ec1669ea65c80a80f9"/><link rel="apple-touch-icon" sizes="384x384" href="/icons/icon-384x384.png?v=b13cd1e61183d9ec1669ea65c80a80f9"/><link rel="apple-touch-icon" sizes="512x512" href="/icons/icon-512x512.png?v=b13cd1e61183d9ec1669ea65c80a80f9"/><title data-gatsby-head="true">IMU项目总结 | 且听龙吟</title></head><body><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><div class="global-wrapper" data-is-root-path="false"><header class="global-header"><a class="header-link-home" href="/">且听龙吟</a></header><main><article class="blog-post" itemscope="" itemType="http://schema.org/Article"><header><h1 itemProp="headline">IMU项目总结</h1><p>September 14, 2023</p></header><section itemProp="articleBody"><h2 id="项目简介" style="position:relative;">项目简介<a href="#%E9%A1%B9%E7%9B%AE%E7%AE%80%E4%BB%8B" aria-label="项目简介 permalink" class="custom-class after"><svg aria-hidden="true" height="20" version="1.1" viewBox="0 0 16 16" width="20"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h2>
-<p>该项目是一个IMU项目,主要功能是MCU通过传感器采集数据,并通过蓝牙传输到手机app上,实现数据的实时显示</p>
+<p>该项目是一个IMU项目,主要功能是MCU通过传感器采集数据,并通过蓝牙传输到手机app上,实现数据的实时显示。</p>
+<p>同时，该项目作为一个横向项目,有一项论文成果<a href="https://arxiv.org/html/2402.03944v2">IMUSE: IMU-based Facial Expression Capture</a>,我作为上科大学生及ElanTech嵌入式工程师参与了该项目的IMU相关工作。
+<span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 40.50632911392405%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAICAIAAAB2/0i6AAAACXBIWXMAAAsTAAALEwEAmpwYAAAA5UlEQVR42oVQ2Y6DMBDj//8RKOSALUcSAQm5a+ChSO3uWpE1CNljT5FzTimB12WpqopxThnruo4Qwjlv2xYDPjE3TaM3nW8oDtm6TtMEVkqBpZJCCufc5XtZf0URY4SSMVbXFR72lGUJllKGEPKfKGBsjLHWzvOMkIwyKLdtw2b8CjH6mDw4YIgunC/Gd2ykRZ+zGBuGgRDKO478R6Pdr7tbrR8WMy5m2Z0yFvwWYwlCjuPY970Q4vn80Vo77+8JY8qf3dE5QYnM9eNxHZlSiivA5bdTpfu1sUedgAVkxySl0Tr/hxckWs04Nh6u+AAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="论文图"
+        title=""
+        src="/static/9dcaab8c2674311ad020062e555904eb/f058b/arxiv.png"
+        srcset="/static/9dcaab8c2674311ad020062e555904eb/c26ae/arxiv.png 158w,
+/static/9dcaab8c2674311ad020062e555904eb/6bdcf/arxiv.png 315w,
+/static/9dcaab8c2674311ad020062e555904eb/f058b/arxiv.png 630w,
+/static/9dcaab8c2674311ad020062e555904eb/40601/arxiv.png 945w,
+/static/9dcaab8c2674311ad020062e555904eb/78612/arxiv.png 1260w,
+/static/9dcaab8c2674311ad020062e555904eb/c1bea/arxiv.png 1388w"
+        sizes="(max-width: 630px) 100vw, 630px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+    </span></p>
 <h3 id="承担任务" style="position:relative;">承担任务<a href="#%E6%89%BF%E6%8B%85%E4%BB%BB%E5%8A%A1" aria-label="承担任务 permalink" class="custom-class after"><svg aria-hidden="true" height="20" version="1.1" viewBox="0 0 16 16" width="20"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a></h3>
 <p>主要负责的是:</p>
 <p>1.MCU端的开发,包括传感器的驱动,数据的处理,蓝牙的驱动等</p>
@@ -129,4 +155,4 @@
           >
             window.___chunkMapping="{\"app\":[\"/app-3f04a5d89e4af8192d0d.js\"],\"component---src-pages-404-js\":[\"/component---src-pages-404-js-b1165d7707586a1f28fb.js\"],\"component---src-pages-categories-js\":[\"/component---src-pages-categories-js-cd0b4f2600888fb3b82f.js\"],\"component---src-pages-index-js\":[\"/component---src-pages-index-js-69ffa5174bcc9ee3693e.js\"],\"component---src-pages-using-typescript-tsx\":[\"/component---src-pages-using-typescript-tsx-a87eff1da7009881b1e1.js\"],\"component---src-templates-blog-post-js\":[\"/component---src-templates-blog-post-js-7711d3f4126b1b3cb49c.js\"]}";
           </script>
-        <script>window.___webpackCompilationHash="cafcbe4413bfb9f7fe1e";</script><script src="/webpack-runtime-aa4a747c9edd16b3106c.js" async></script><script src="/framework-5585feef2812a02482ac.js" async></script><script src="/app-3f04a5d89e4af8192d0d.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>
+        <script>window.___webpackCompilationHash="614a3c8adc37e46e0b95";</script><script src="/webpack-runtime-2cd49e56469f41ea99ab.js" async></script><script src="/framework-5585feef2812a02482ac.js" async></script><script src="/app-3f04a5d89e4af8192d0d.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>
