@@ -1,4 +1,157 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[A blog about computer science, mathematics, and life.]]></description><link>https://zhexulong.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Sun, 06 Jul 2025 13:05:40 GMT</lastBuildDate><item><title><![CDATA[上科大blackboard简易爬虫]]></title><description><![CDATA[Blackboard课程资料下载工具（交互式版本） 这个Jupyter Notebook项目提供了一个交互式的工具，用于从上海科技大学Blackboard系统下载课程资料。该工具支持自动化登录、验证码处理、课程资料批量下载等功能。 github…]]></description><link>https://zhexulong.github.io/bb-spider/</link><guid isPermaLink="false">https://zhexulong.github.io/bb-spider/</guid><pubDate>Wed, 02 Apr 2025 03:54:00 GMT</pubDate><content:encoded>&lt;h1&gt;Blackboard课程资料下载工具（交互式版本）&lt;/h1&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[A blog about computer science, mathematics, and life.]]></description><link>https://zhexulong.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Tue, 06 Jan 2026 15:58:23 GMT</lastBuildDate><item><title><![CDATA[增材制造技术课程总结]]></title><description><![CDATA[受力分析驱动的拓扑优化设计,整个流程使用nTop完成,可视化界面有一种低代码编程的感觉,相当方便,最大的问题是教程和文档太少,只能靠自己摸索,以下是整个流程: 定义支撑:
+ 定义受力区域和受力大小:  应力分析:  基于应力进行晶格化设计优化:  最后在外层套shell…]]></description><link>https://zhexulong.github.io/nTop/</link><guid isPermaLink="false">https://zhexulong.github.io/nTop/</guid><pubDate>Wed, 07 Jan 2026 23:09:00 GMT</pubDate><content:encoded>&lt;p&gt;受力分析驱动的拓扑优化设计,整个流程使用nTop完成,可视化界面有一种低代码编程的感觉,相当方便,最大的问题是教程和文档太少,只能靠自己摸索,以下是整个流程:&lt;/p&gt;
+&lt;p&gt;定义支撑:
+&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/7cbbf03dc837426407470cbf383ba8ad/d44c9/0.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 134.81012658227846%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAbCAIAAADzvTiPAAAACXBIWXMAAA7DAAAOwwHHb6hkAAADnklEQVR42o2UiW4aVxSG/SA2zLDHJlFcudSIWMakiuyA7KRVowanJo68ABNqHLaA8bDOwuwbw2Iw3qKoqSpRP2EPUNU1xlGuBNId3e8s//3vmbLZbHa73WQyeTxPNjc319bW5ufnLRaLbbgQBJmenp6ZmYEDtjtragSjJlP+KNfv9//88qVSJWbn5uC72WwOBAIYhm1vby8vL8MWTt6CYQ/hA36/wDGdk9bZWY/hxbXnfqPRaLNZq5Xy9fX13/0+jhf+K+cGhngul0vkOYFnWk1d1TSa4Q4PP0DQlxvrlRLe7Zy0221JVp4sLUHx/08+BWnfY9Hzsx5FVFRFqtIsSTOdzoksS0S5kM+mut2Orjcur64ikSiKordgq9V6lMs2G418LpfP5xOJZKFYYIol6bhYLeOJA6xeryuqOohO03D4VtlQSQyLwgmSqlE0U6mUM5lUFsNK7/Yyid+T8djHdLJUwFsNvUqQIC4IcQMbjchPL1/U9booK4qqyYpWJah0KpWKRfOZD2U8h+cy+FFakfjYwSEIdFswi+W7+cdMja7rerPV6p6e8pLsD2w8mn0Q3tkmysVKqVAt4jzH+APr4z0PLhlFIuH9VrvVbLVBmKtPn4p7sdRuhGJqHEPTRJVjqEQy9WB2brzn4T2jT30rmqbCnVzCuri4VOp/ff7j/PxMEjieoaGuZ6vPUQQZNwn8IJ7DYT8+yjabjV6vp6lqYjfM0RRsFVlUZWEvHDVbrBPsCeTIZFtvgnVV1hu6wIupX98ep1OapiiSSJKkZ2nZZELH0g5gp9M5bBt9uuLlGFKWxE6nc9E9ZWhS5Fmg377bGRrLNiGzz+ezDtdDp7OQ/ygKvDrMyNIkKEyQpNvjGXPlDQzPZaQh/L+P7oFDKYLE02m2RkqSuLO7fx95A4/aDr5+BW1znFDCj3m2xrDcots9sdt/Ya/XO1TbAW/w1S8/a7IoSVKNIlRZOoiDpSz3kQPYvbg4gg0Gw2bwtTbIzFFEWVOVYDAIEeEW74VHDQM8YzCEQltNvc6zLKgFsq+uriJ3jDFukhEMmSPhMLxeEFngaiLPLyws3B09k2GoMB6Pw9DgWAYsjeO43eEYM/NkeOQTmHWcIALM1qhIFBt7Q/fCw3u2vPkthJcqMAmzmfT6xgsEMX4TPBzd6FYoBMOEqJaTiUPXD26z2fStMIqafvR5a2RFloT9CPa1Xu+WDQsms+v7hZUV75zT+XWpRvA/ruDb9u5Ke5UAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;alt text&quot;
+        title=&quot;&quot;
+        src=&quot;/static/7cbbf03dc837426407470cbf383ba8ad/f058b/0.png&quot;
+        srcset=&quot;/static/7cbbf03dc837426407470cbf383ba8ad/c26ae/0.png 158w,
+/static/7cbbf03dc837426407470cbf383ba8ad/6bdcf/0.png 315w,
+/static/7cbbf03dc837426407470cbf383ba8ad/f058b/0.png 630w,
+/static/7cbbf03dc837426407470cbf383ba8ad/d44c9/0.png 722w&quot;
+        sizes=&quot;(max-width: 630px) 100vw, 630px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;定义受力区域和受力大小:&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/67600e82c92e17644226a0ca7a453cbc/1f083/1.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 137.34177215189874%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAbCAIAAADzvTiPAAAACXBIWXMAAA7DAAAOwwHHb6hkAAADwklEQVR42o2Ua1MadxTG+SJp2BtgFYU2ipKQFCJExio2CCwEI3dlQQG5g4BWAgpBFmS5LrvchHHaTNu3nX64rq1VNHVkX+yr8zuX5zz/w+I88nG5XAiCFxdFNpthY2OVy+VxOMiDGNZjMIIgU1Pf5vLuP//Cf/vjTIeusdkgk/FpmAkCAEgmE1F0oD847g+je95NEOTcZx+H2WwIRX/o9rxt+rDd8bs8aghEJoWZynv7qk430CTDJB1ye96D0GTwNc/hJpMGuhOoN/0kHXZ7VCAIPw0zEYzOQiG/ULC3qQhRC5CdA+eeEgCQSeDrnqXSxXodq9R28bKzSe3bnRuTwoxam2pZi3TglS28ZGmQu1aHBgSRCdtGHDYjUbWfl6zlC5RomI1mNfSkYExZGIJEovki7sHLms8lRxHfKpQM9h0r8tBgX8E8Hvf5c9BmW//1983zi41YxJs+sVL9d9k8yuNNIwj8KHxdFoaFAuFFxXL1RZFMK71YOBZEu5fSBqmfX5iHIGjcoawHZRkDm83a0ZWJGiyl0tpiiTw6tlE9QXdoXFMp2GyAy/s/mEkJgqB4SUwQ3tEvimprJRi2YybnUcLZokWjLzKnSw8A93wyDnNgGPH57IOhrT+S48TGDmba0myHA1qqLx5cydJZjM+fGx+bNWYMtnJFWSXinQHaG8ozeUXi51i9SUejmnZX0rl8W6n53sqXAQC4HZv137uHBAJBPBZstXy94UpvpEh+WsV2sWQgGo29p/qvqf5ynTwwW8wgCN12flMZRmDTtql4nmrT690BWmvaj9LYC+HCDDwVjRnaHXX38l21hcWTQYHwexi+0Zz173q+EwqCB/5SyUd1UJIK4sTHbC4STxxHoof5/H6tvkt1XQ1KkzlLrP74EwgCdzDT88slUTQUIgisTRuarVDxQneSiZyefi7kioWCs9G0NVqH1aYjm4t/+Gi9PWY3sHhxPhr0VypOurdC99/ghDyeynh83mQscX6+U2t8aJD2elt3kk2hRss9tWEEmZudOdh312omuqcke68yOSvmjev0Op/LdXbqJjsiqi8lmurUSUKl1jNj3hcMhtBNdblsoXoSvCpPnRyvq/XT01N6jTqTDrRocbsrrzS0gVhS/FoKQTdn9G5Viwsvgp7dwwQWT4R8weisQPjNs2fSN5JPxwm8rCA7kjzu0hrtnK8dxijA43LXlAq9zqDR6sWvJExvzOnmz0w7HdZwwB8Ierft2Kzgbk8PH8Y/APODbqdieMEcX7EsW1epRWImI8QZK/034zfHtlV1abkAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;alt text&quot;
+        title=&quot;&quot;
+        src=&quot;/static/67600e82c92e17644226a0ca7a453cbc/f058b/1.png&quot;
+        srcset=&quot;/static/67600e82c92e17644226a0ca7a453cbc/c26ae/1.png 158w,
+/static/67600e82c92e17644226a0ca7a453cbc/6bdcf/1.png 315w,
+/static/67600e82c92e17644226a0ca7a453cbc/f058b/1.png 630w,
+/static/67600e82c92e17644226a0ca7a453cbc/1f083/1.png 660w&quot;
+        sizes=&quot;(max-width: 630px) 100vw, 630px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;应力分析:&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/18c04d4f8fbc8aae138457455ffb7ffa/21482/2.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 79.74683544303798%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAQCAIAAACZeshMAAAACXBIWXMAAA7DAAAOwwHHb6hkAAACVElEQVR42n2TTWsTQRjH8ymEdJOmu/M+m8kkk9mX7OZ1WzFKD8ZiqxaqqChYikbwUNEevDSCIoI3T54EEaonLwUvHqV3v4HePfbgbJrEbQSfwzDzsL95/vt/nsnhUwExQhgj/N+AELbbnZpSuVkKYVgBiQ9uMKQQBhiTfzEyDoSQp7WsyhlsUo4Wd5LOR09tQ7iIMZ0jDQPHYfYAmNvxFCYMAstv7fb3jrs73ymtzIk3pKiIZqsZRbGUUgjBGM/A9oJaecAPf4Ovv0TnOrILJpnlKaVhGEpZMQKMMyRTmSJQdKNr+ujg3PGr5uO3qAjmhBu40WiUa1HJxg5AVR1kYFh01dXB52+bn/bPjn6q+m0ILZPPuhX4vqgFDvdJWXc6yzPDqDGpqta7Wz+ClYN2910knzBYzdpuKgeelqqBZI+IsN3yM27jJUlXY/yo1X0dec9D5652Nikqp81Pe4EYYzoIXZdjUCII+H6Qyzpasy+EznbUfta88iKk931rvbbYP7HdVAeYNAnSnNU93+WuuW4GI4K5tje8M2tRf9Q7OozaL0My9PAt4qTOml9fgGQo84Ma4Uozmk7L38oE0nrhUoMNY70f7X6Jo1Ev+RCIHezYxitGcb6Int7kl89XuDDlaWZIUl2wYsW95H3HfyOKcXmpoa1BeTFABI7nAJfycG1PJRtK8jo7DU9Mk8Wkai0bFYYhIPNIKEULBfjwnntxtc44ZWwenswhguPukMk6HQRoW9VkqOKBVmVKp/DJW5l8nm7p5DhdxxuSmgq4cGVdG9mMEPIHH8m42ZkWdRAAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;alt text&quot;
+        title=&quot;&quot;
+        src=&quot;/static/18c04d4f8fbc8aae138457455ffb7ffa/f058b/2.png&quot;
+        srcset=&quot;/static/18c04d4f8fbc8aae138457455ffb7ffa/c26ae/2.png 158w,
+/static/18c04d4f8fbc8aae138457455ffb7ffa/6bdcf/2.png 315w,
+/static/18c04d4f8fbc8aae138457455ffb7ffa/f058b/2.png 630w,
+/static/18c04d4f8fbc8aae138457455ffb7ffa/40601/2.png 945w,
+/static/18c04d4f8fbc8aae138457455ffb7ffa/78612/2.png 1260w,
+/static/18c04d4f8fbc8aae138457455ffb7ffa/21482/2.png 1350w&quot;
+        sizes=&quot;(max-width: 630px) 100vw, 630px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;基于应力进行晶格化设计优化:&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/bdec4c0493139c74afe0f81e701a3a1a/aa61c/3.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 88.60759493670886%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAASCAIAAADUsmlHAAAACXBIWXMAAA7DAAAOwwHHb6hkAAABjUlEQVR42pWT626CQBCFfRUBb6gRQYLgLZJGQWq5LuwuCDbG1DQ1aeOvvn3HNk3FEi8TQmCz386ZmbOlaj4ajYaq9lutVqVSqV6L0ukPx3GaprmeN5lMqjfEH1yr1QCeTqe2bT8ul81m82ryc1jT1DAMCaWS1GNZFhbvkC0IAkIoijAovw8GndCwEKHtdms7DsMwd8A/J+Ao+jgc3vZ7WZYvJz+HYWv2nH2+H/Yvr14Q3DeqbldIspQYS2RYNElgcheSn8OSKNEkRtaTN9RJHEdR1G63oReFfG5ULMuNx2NCSOC4eG5hgtM0NUyzXq/f1G1rsUiSJEShPX1YGAbGeLVazWazQsOU8kPuBoEPsO/7qqrO5/MsTWkcw4qiKLDhTHwOHgwGoJlSignZbDa73e5oGBxlWTYu8kzptGDTNKBISgnA8IBPURjCWaC8J8tXMouiCMDqOxzX5Zt84Pvr9fr4zfP/y851m2FYuBiQCorUdb1cLkuiOByNOp3Ojfas9vsKXKnKrxxwOLwL4S/0adAzARjUzgAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;alt text&quot;
+        title=&quot;&quot;
+        src=&quot;/static/bdec4c0493139c74afe0f81e701a3a1a/f058b/3.png&quot;
+        srcset=&quot;/static/bdec4c0493139c74afe0f81e701a3a1a/c26ae/3.png 158w,
+/static/bdec4c0493139c74afe0f81e701a3a1a/6bdcf/3.png 315w,
+/static/bdec4c0493139c74afe0f81e701a3a1a/f058b/3.png 630w,
+/static/bdec4c0493139c74afe0f81e701a3a1a/40601/3.png 945w,
+/static/bdec4c0493139c74afe0f81e701a3a1a/aa61c/3.png 1065w&quot;
+        sizes=&quot;(max-width: 630px) 100vw, 630px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;最后在外层套shell防止晶格外露导致刺手,并导出STL文件就完成了&lt;/p&gt;</content:encoded></item><item><title><![CDATA[超大规模集成电路(VLSI)课程总结]]></title><description><![CDATA[工具是ICC2和innovus都会用
+由于FPGA综合过程有很多不懂的名词,而且听说正常公司都不是一套vivado走全程的,因此想上这个课学习一下 总体流程是: 数据准备 (Data Preparation)：加载逻辑、物理和工艺信息 布局规划 (Floorplan…]]></description><link>https://zhexulong.github.io/vlsi/</link><guid isPermaLink="false">https://zhexulong.github.io/vlsi/</guid><pubDate>Tue, 06 Jan 2026 23:09:00 GMT</pubDate><content:encoded>&lt;p&gt;工具是ICC2和innovus都会用
+由于FPGA综合过程有很多不懂的名词,而且听说正常公司都不是一套vivado走全程的,因此想上这个课学习一下&lt;/p&gt;
+&lt;p&gt;总体流程是:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;数据准备 (Data Preparation)&lt;/strong&gt;：加载逻辑、物理和工艺信息&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;布局规划 (Floorplan)&lt;/strong&gt;：确定芯片大小、宏单元（Macro）位置和电源网络&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;布局 (Placement)&lt;/strong&gt;：放置标准单元并进行初步时序/面积优化&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;时钟树综合 (CTS)&lt;/strong&gt;：构建时钟分配网络，平衡时钟偏斜（Skew）&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;布线 (Routing)&lt;/strong&gt;：完成所有信号线的物理连接&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;后期优化与收尾 (Post-Route &amp;#x26; Chip Finish)&lt;/strong&gt;：修复剩余违例、添加填充单元（Filler）并输出最终文件&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;整体流程相对好理解,类似于建城市的思路,先建大的,再填小的,然后布线&lt;/p&gt;
+&lt;h3 id=&quot;流程中的预警机制&quot; style=&quot;position:relative;&quot;&gt;流程中的预警机制&lt;a href=&quot;#%E6%B5%81%E7%A8%8B%E4%B8%AD%E7%9A%84%E9%A2%84%E8%AD%A6%E6%9C%BA%E5%88%B6&quot; aria-label=&quot;流程中的预警机制 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;这是一个比较有趣而且有智慧的设计,思路是先粗放地进行估计再细化地进行真实设计,每个流程都考虑一下会不会对后续流程造成问题,这样问题发现的早,也更能够定位问题点,是个值得借鉴的思想,总体有这些机制:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Floorplan阶段通过utilization来判断Macro之间距离是否太小可能导致拥塞&lt;/li&gt;
+&lt;li&gt;Placement阶段通过判断布线是否会overflow和hotspot判断是否可能造成问题&lt;/li&gt;
+&lt;li&gt;Placement阶段使用理想时钟优化datapath,CTS阶段变成真实时钟判断是否会存在传播问题,还有&lt;strong&gt;Early Clock Flow&lt;/strong&gt;设计试图让Placement阶段预判CTS结果&lt;/li&gt;
+&lt;li&gt;Routing先全局布线再轨道分配最后细节布线&lt;/li&gt;
+&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[上科大blackboard简易爬虫]]></title><description><![CDATA[Blackboard课程资料下载工具（交互式版本） 这个Jupyter Notebook项目提供了一个交互式的工具，用于从上海科技大学Blackboard系统下载课程资料。该工具支持自动化登录、验证码处理、课程资料批量下载等功能。 github…]]></description><link>https://zhexulong.github.io/bb-spider/</link><guid isPermaLink="false">https://zhexulong.github.io/bb-spider/</guid><pubDate>Wed, 02 Apr 2025 03:54:00 GMT</pubDate><content:encoded>&lt;h1&gt;Blackboard课程资料下载工具（交互式版本）&lt;/h1&gt;
 &lt;p&gt;这个Jupyter Notebook项目提供了一个交互式的工具，用于从上海科技大学Blackboard系统下载课程资料。该工具支持自动化登录、验证码处理、课程资料批量下载等功能。&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://github.com/zhexulong/useful_tools/&quot;&gt;github地址&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&quot;主要功能&quot; style=&quot;position:relative;&quot;&gt;主要功能&lt;a href=&quot;#%E4%B8%BB%E8%A6%81%E5%8A%9F%E8%83%BD&quot; aria-label=&quot;主要功能 permalink&quot; class=&quot;custom-class after&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; height=&quot;20&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;20&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h2&gt;
