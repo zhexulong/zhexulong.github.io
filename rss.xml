@@ -1,6 +1,36 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[A blog about computer science, mathematics, and life.]]></description><link>https://zhexulong.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Tue, 06 Jan 2026 15:58:23 GMT</lastBuildDate><item><title><![CDATA[增材制造技术课程总结]]></title><description><![CDATA[受力分析驱动的拓扑优化设计,整个流程使用nTop完成,可视化界面有一种低代码编程的感觉,相当方便,最大的问题是教程和文档太少,只能靠自己摸索,以下是整个流程: 定义支撑:
- 定义受力区域和受力大小:  应力分析:  基于应力进行晶格化设计优化:  最后在外层套shell…]]></description><link>https://zhexulong.github.io/nTop/</link><guid isPermaLink="false">https://zhexulong.github.io/nTop/</guid><pubDate>Wed, 07 Jan 2026 23:09:00 GMT</pubDate><content:encoded>&lt;p&gt;受力分析驱动的拓扑优化设计,整个流程使用nTop完成,可视化界面有一种低代码编程的感觉,相当方便,最大的问题是教程和文档太少,只能靠自己摸索,以下是整个流程:&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[A blog about computer science, mathematics, and life.]]></description><link>https://zhexulong.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Sat, 21 Feb 2026 05:53:34 GMT</lastBuildDate><item><title><![CDATA[增材制造技术课程总结]]></title><description><![CDATA[受力分析驱动的拓扑优化设计,整个流程使用nTop完成,可视化界面有一种低代码编程的感觉,相当方便,最大的问题是教程和文档太少,只能靠自己摸索,而且容易闪退,对系统资源(cpu…]]></description><link>https://zhexulong.github.io/nTop/</link><guid isPermaLink="false">https://zhexulong.github.io/nTop/</guid><pubDate>Wed, 07 Jan 2026 23:09:00 GMT</pubDate><content:encoded>&lt;p&gt;受力分析驱动的拓扑优化设计,整个流程使用nTop完成,可视化界面有一种低代码编程的感觉,相当方便,最大的问题是教程和文档太少,只能靠自己摸索,而且容易闪退,对系统资源(cpu&amp;#x26;内存)消耗较大,以下是整个流程,以供参考:&lt;/p&gt;
 &lt;p&gt;定义支撑:
+&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/448c1a882069f0f231e82a2ba5f90316/6a6e9/support.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 100.63291139240506%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAA7DAAAOwwHHb6hkAAAC60lEQVR42o1V2U7jQBDkYzgUIOQAAonjc2zP2IkT2zmcoBVCSHu87f8/1XZNQIIkoH1ojY+ZSlV1tXNi1lvoLEc+mUBPZ/BmCwT1Gn61gptqKQM3m2KsM/gqRp7nGA6HuLi4wNnZGc7Pzz/ViTMtEZcL5NUCZrVFVq8Q10vE6yeksqokhe+OEQlwLD+kJgWapoHneQdgFnCoEoQCOFs3WJRzNKsldDFDUtZI5xXUyy/4v//CffmD8WIDJ1JwBCzLMlxdXR2wPBmlGTxtoLIJ6rrCutkgjWMEnotwPIZvxI7nVzwUNdqDB7QvW7i9vYXrumi1WkcAEwNPDqXbNbavz3jabGCWJdJNvas0gYkVItdB5PuIlEI4MZhVc3mXWi/3GBr4OocSucXPH2gEcC3ytYAqOagEQEkzVPxWIjk2Gmqeo6oqhGH4ieUOUBjG4lvaVEiSBNPpFMvlUiwQhnLPQ74fvK3+W3kIo8gyPmRIwJk0Yl1awLIssRGmvI4EhAcDWQeDAbrdLnr9nl3v7+8RybvjgOxsIxESWYVcr1Yr2RzaA6wgCC1Au91Gp9PB9fW1bQ73H/dQGKZVgcxkInclDBvLlB4SLAgCOI6D8djFaORYCyi93+9/DWjmU9RlZYNbiI8zPjPGhpjTQQ8ZF8tYAFOZJIJ8bkqyk6wKYVcWqOjfdgOttfWQ0Yiks6PRSDy8x93dnUgf2JV79rO4A5RZVvlEYlDa2LC7Sljs5AZ2JTsypUyPoZf7m5ubY5MikmTwY5mWLDMoJVuUGgY7j8acFlnZ1fdiM/js+KRw9OIEmvJEgiPSaD69Ili328GljBu7yuL88h27fXp6evhx2AGm0OKVlgZw83sRsNfr2cPvRVBKZ3S+AUwsoJEvCEE+gjIWBKJfLF77nv8fgCI32wN8Z0hWHxkyg90vAaUhnnwTjd5J3gdkE+jbRw89/1uGEhspLRPC7jJ7BKJPzN7j46MdOcolCIshJ9tjfwH/AMQCp1LdTNuQAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;alt text&quot;
+        title=&quot;&quot;
+        src=&quot;/static/448c1a882069f0f231e82a2ba5f90316/f058b/support.png&quot;
+        srcset=&quot;/static/448c1a882069f0f231e82a2ba5f90316/c26ae/support.png 158w,
+/static/448c1a882069f0f231e82a2ba5f90316/6bdcf/support.png 315w,
+/static/448c1a882069f0f231e82a2ba5f90316/f058b/support.png 630w,
+/static/448c1a882069f0f231e82a2ba5f90316/6a6e9/support.png 826w&quot;
+        sizes=&quot;(max-width: 630px) 100vw, 630px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;
 &lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
       style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; &quot;
@@ -39,6 +69,37 @@
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/5145f42aea4835b15896c7553113d9f3/f8067/force.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 148.1012658227848%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAeCAYAAAAsEj5rAAAACXBIWXMAAA7DAAAOwwHHb6hkAAAEf0lEQVR42n1WTVPiaBicP+PXVIkiKIoEEvKdQBIIJKDo6NZUbc1h97B72T3s/vXe7heDou4cnkpqiJ1+u/vpzBd7uUZar+GFMcazJYI4wWg0gjUcYTgcmrEsCyOO7p1JDjtOkWVTBEGA4+NjHB4e7ubLbZggWj+ifHxCMZuhqivEUz7MF4X1BsGiRvjwCxy+bJRM4FX38BcruJMMRVEY0IODg1fAAQHtNEOY5cgJtFqtMJ1M4IxduEEIz7ZhffsV9h//wPrtL5wvHtBut3HOubq6gs3f9wEjAZIRAav1ClVVm+M4jgN3PMb4ZdI0xfV1DxedDjoXF+h2u0YKAX79+vU9IBk+3GH1/QmbzQb5soR/VyK4p6arOQLPh+9zPO91pin82RSLxQJxHO+03AImU3jUI3leYfXtATVZzvmgvywMkOu6H4esvUkCN09RzkuEYYiDw4M3gHmOsMzgpjEi/lgSsK4qPjw3AGNKIPfFZsgEeGQ9dgjqeubfZM4+w5yOEdDnW5MoNoDzcm402urowB7ZRrdWq4Xz83MzrbMzo6dO8imgNyUg31iRXUHWMkeAjgAJPiTgGUEEZtzm9fLy8hOGytSc1yQygGW5wIy5bBgKeMSj9no9A3JBp3eAjM+YsuwB+sWM0UkxSSeoV7XJo2Y+n1EvzwAbhtyWIAzM/Va/aG9j9hhGxZTHLAjIcDPkEjtJEnMVQIcZlIb9/g1ub28xGAxwc3OzO+5esOVyRIYZgdbrO3NclwxM/jhiKXYClQnSTffX19cIo3Af0OFeegRd0tmqrmnI0gCYbaE2zUbY9shER7HR1UjA68dN0dInqTFjxtwpf1EUmT9wNASWbl0ykhliJkNkkPtixg7QYhWNWAJaJ7WH9JI+YqWRTqenp+jwmGLdpqtyvUdn9dzJycl7wAnsICKjEFm+BRRIA3h11TOtInYK9KmGLxDDfr+/1zQG0F6wYJc1Am6HU7AUonhXqhaBBT4QYw3vbRKwvAAp3Rfjo6OjdwUbpYjuHrFQwVI/1deHgr1/wjhnyNnqfrU2v3nTnxSsXI6yYlewExbsmG/3wggeDbGef8D+819Yv/+NdvVIU7poX3SMFDJsj2GTQ5+gqv8lHZ5OqSvjMG5cpgkJX9a76Rugtlm9tpFC8rz9ruwKNmLBrr8/Y3N/vyvYcLNEyIJVsAMTbtfo5jEqaiXvpWAVsUbL19XjZqTPa6yfHrEiy9lyAW+Zwws+FqxAXX5zvOy1YI2W7+srLHPTwqZgyxLV8k3B8tjaDhWrw2IVKzVMyMBr330CHn3ahwSM+bAABdb0oUabo+1QHyqHmrOzbR/+f8GqsfmxV8HmLIy3fWjbjjGhKViN7n8OyIKNwy1D5UzHbBjq/i1DsWu13gOGr33os/4n/P4qPspjzeZRjW0LdsvQsliwNErg0lZaBn6Ak6ZgVQ4Kts9mjhmDWbEt2CzLzHrpA78r2G7H1NW2XK3d/V7B3rg+LD/EiH/kpRFB0u3/Hhjk5rjST2NZA3NUVZhGGna7l4ZxA/gfLKsl9ns9K1cAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;alt text&quot;
+        title=&quot;&quot;
+        src=&quot;/static/5145f42aea4835b15896c7553113d9f3/f058b/force.png&quot;
+        srcset=&quot;/static/5145f42aea4835b15896c7553113d9f3/c26ae/force.png 158w,
+/static/5145f42aea4835b15896c7553113d9f3/6bdcf/force.png 315w,
+/static/5145f42aea4835b15896c7553113d9f3/f058b/force.png 630w,
+/static/5145f42aea4835b15896c7553113d9f3/f8067/force.png 726w&quot;
+        sizes=&quot;(max-width: 630px) 100vw, 630px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;
+&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
     href=&quot;/static/67600e82c92e17644226a0ca7a453cbc/1f083/1.png&quot;
     style=&quot;display: block&quot;
     target=&quot;_blank&quot;
@@ -66,6 +127,37 @@
     &lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;应力分析:&lt;/p&gt;
 &lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/8c1235da64514ffa91f2d11d6e24839e/1fbe8/analysis.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 135.44303797468356%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAbCAYAAAB836/YAAAACXBIWXMAAA7DAAAOwwHHb6hkAAAFAklEQVR42nWVWXfaVhSF/VdST2A0D2hGQmhAAiEQmMGO7ThuGqcraR760n+/uyUnXnbjPpwFV9L97j7jPeqZKoTfN3j3uIH4/Qb96RhyHEJPI+hJBDUeweB/k6ZpGlRVgzVUMIl0yIqKs7NT2tmzHemahF3t4qo2cXfp4752cFXYCAMLYehiTLNdG4ZlwTAM6LoByxoiioIO/hLWATWxh0NOWK7hvvLw2IS4ywwEhojQUjFxNOiKBGEgQBRFCIIAhcocx+3WvwAHhoWL/QPO7r5B+/w3zudbCKYNLc6hTaaQbA/CxQUkWYYkSZ3pug7X/R+gZFpQ9vfo3TxCe/gL+sev0La3UL0AuutDH0VQhtYTjFBxMIBMUBiGkLk+OTl5DRQNE87dI8rv/2D2x1cUn7/B+/AF3mqLoNkhmNWMoQdDUTBslY1j+HmJWb1EnmUY8IDT09MXLjM2RpwhThLk8Rh5miDJc8xWDYoFYUyAtdxi9PFPmDxYzUqo5hASD/A9r1Peqjw/P/8BpGxjNIZX8cSqRk3QerVEWs6QNluEswWimweMtwe4iwZOuYATjuEkGZzxBOM4fna9hR4NJBl6GCMoKyS7a1zu9qjpTrPdYdFskG12yPk8qVdIeGAyLZCt+Wx7hXS9RUZvyun0WWkHNAh0Jxkiqixv7tHsD9hst6j21ygON7RblLcPmPHdlM+ml3sUVFzy3ZQHzjb8tqo6pc8KvXSKcDpDwlPLusa6abA5XGF//R4H2paHZEXBdzy0mjNRLhzfpwWwWJPz+bwrp9fAco6YbqVFidVyif1uh+urA95fX6NeMJZR1LkXsWRUJkVnK2qq2rXkeDz+j8JsiiBJkTMmFTdXPHE0GnUWBEEHa/+3m1pri1ohLJ5MOmC/339KikCgxiwXywbz2QxLurReb9A0KxTFlK5UHcxjibRg27a7os5YgwlLrKoWbEUFx8fHP8qmBVJhlOWswbQrgyXdLcvyWVkQjNhqTqekbbn212f82mHRwtv1z44hUOoUhgROCGuBNZMyI9Dj5iDwu80mN0t00+LUaQfEcMjilp7WL1uwc9mIqSwrkDAeKVVWdLOcEUiFIyrwGTvbcaBQidn2NQHtulU2/NHnP9vvqD+4gMIazBiLVk08ocpxxLpM4RQVHPatneQYjkLYrAST3aFbNnzOyAnbtVX3qpdN1UIaJghtKjEC+DpdNH1+2M7AQTcHWxdbUxUNnuVDNXyOuJjvLp57+BloOx6y7ZqThdlslog3K4SLOfs1eGU2k+J6PqIgYjFP4CdNNzheqnuKoW1AvFvg9FMN6csGyrc9pA8LqBz9xohjK/SgBw7UgQhVlKlSgqjacOMVE2L+Og/7vT6EyxzntzPIH1aQPq0xcE30R8ze+wrCbgr1/QLy7QLHEwcnv71DT9AhWSlE4eKNK0CVuanAKYHKQwPxtoLo25AjF8p8AilhPMcexLGL3lDDoHeOgWxAsVNmV3gDaGoQW+A1B+fHBhL/t0CVbioeVaoKxP4A0oXA0S91tScoQ8hUKIlvAD11gKnvISE41QREioCprSJ32Ke2DkVSuJFxY9Y1epN4vAV5icl2BvkthYKhQFln6F3yg30JnXGTqhiaO2QHUWXr/lDvukRiEyiEiOqwi6EkDt669fjxOsfZLodwoNu3NYR6AsWx6Db7ts2wPYTCAm7v47Y+JQJVa0KFv16j/wJNKI5oYd2lMAAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;alt text&quot;
+        title=&quot;&quot;
+        src=&quot;/static/8c1235da64514ffa91f2d11d6e24839e/f058b/analysis.png&quot;
+        srcset=&quot;/static/8c1235da64514ffa91f2d11d6e24839e/c26ae/analysis.png 158w,
+/static/8c1235da64514ffa91f2d11d6e24839e/6bdcf/analysis.png 315w,
+/static/8c1235da64514ffa91f2d11d6e24839e/f058b/analysis.png 630w,
+/static/8c1235da64514ffa91f2d11d6e24839e/1fbe8/analysis.png 757w&quot;
+        sizes=&quot;(max-width: 630px) 100vw, 630px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;
+&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
       style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; &quot;
     &gt;
@@ -100,6 +192,39 @@
     &lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;基于应力进行晶格化设计优化:&lt;/p&gt;
 &lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/725ffe14e3557fc9f43db517d5f38c98/cf8e5/lattice.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 63.291139240506325%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAANCAYAAACpUE5eAAAACXBIWXMAAA7DAAAOwwHHb6hkAAACSElEQVR42o2T227TUBBF/Q28IFEgaePjS5yrHd9y8/U4Po7TxGkKCIm+8I6gjyC+gR9A/dXN2C2FNlTi4Uj2HHl579kzUrU5QPACPM4RLWMs5kvEQYIV1ZbBEpqmQVGU/z5SsSqRixw84ZhPF4jCGI7tYjwy4boeDMMAY+zoQ1lVwegcAbNUQBCwEAVm8zlBHExME/ZkQs8uut3uEZCpCgbtDnot+QgqVeUlttsttmWFan0JnhUIihxZtkbOBVzPfQDUCPayreL7xQm+fniBk/Zt7R64SgqIXKDaV9S7CMsohl2mGPkOrLHZqHxgS1Mhn7ThX5/Dv/mGTkeDqvz5oVSHIYRAkiTwPA/ueQZrFaLXNTAcDjEYDB71iSzKLbDxBdTFD3o36XRu641CsrVek708x3TqYx6H8IIFhqMBLOqjruuPekhhKGcwFA71WQillUD5q4/ShhSVm7Lpo9jEyPIQaTJDyn1qRQLf94+B7BTDyWdor0rorQM0Q0ChWn0n1YByU2C/3+PyzQG7isDv3kNcfURyeIs0TRvrsizfKmFkT6cp4D9J5RW6r/cwrGtSfacw4Uus8gy7XUVnhyAIME9XcGKOgTeFbdvo3c/ib+AEZn4DvfcJnecxuqMvND463TNIcRLQiGSIoqix5zgObMuEQRsyokD6/f6RZYWdQe1vwLQC8qlO6u0G1ihMedSkHIZRA5vOZhiPx9AoDMuy0O/1/rkpNZTValV2l/Kd5cViBs45YlJo0oa4NDq1zTrdGvzU6j21y78AoxKgWYZv9pEAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;alt text&quot;
+        title=&quot;&quot;
+        src=&quot;/static/725ffe14e3557fc9f43db517d5f38c98/f058b/lattice.png&quot;
+        srcset=&quot;/static/725ffe14e3557fc9f43db517d5f38c98/c26ae/lattice.png 158w,
+/static/725ffe14e3557fc9f43db517d5f38c98/6bdcf/lattice.png 315w,
+/static/725ffe14e3557fc9f43db517d5f38c98/f058b/lattice.png 630w,
+/static/725ffe14e3557fc9f43db517d5f38c98/40601/lattice.png 945w,
+/static/725ffe14e3557fc9f43db517d5f38c98/78612/lattice.png 1260w,
+/static/725ffe14e3557fc9f43db517d5f38c98/cf8e5/lattice.png 1402w&quot;
+        sizes=&quot;(max-width: 630px) 100vw, 630px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;
+&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
       style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; &quot;
     &gt;
